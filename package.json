@@ -8,28 +8,94 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "setup": "npm install && npm run prepare && npm run husky:setup",
+    "husky:setup": "node -e \"const fs=require('fs'); const path=require('path'); const huskyDir='.husky'; if(!fs.existsSync(huskyDir)) fs.mkdirSync(huskyDir); fs.writeFileSync(path.join(huskyDir,'pre-commit'),'npx lint-staged && npx validate-branch-name',{mode:0o755}); fs.writeFileSync(path.join(huskyDir,'commit-msg'),'npx --no-install commitlint --edit \\\"$1\\\"',{mode:0o755}); console.log('Husky: Hooks criados com sucesso!')\"",
+    "postinstall": "node -e \"if (require('fs').existsSync('.git')) { console.log('Repositório Git encontrado. Configurando Husky...'); require('child_process').execSync('npm run husky:setup', {stdio: 'inherit'}); } else { console.log('Repositório Git ausente. Pulando setup do Husky.'); }\""
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "terser": "5.39.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.26.0",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.4.1",
-    "eslint": "^9.25.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
-    "prettier": "3.5.3",
+    "prettier": "^3.5.3",
+    "validate-branch-name": "^1.3.2",
     "vite": "^6.3.5"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "eslint --fix"
+    ]
+  },
+  "validate-branch-name": {
+    "pattern": "^(master|main|develop){1}$|^(feat|fix|chore|docs|style|refactor|perf|test|build)/.+$",
+    "errorMsg": "Branches padrão (main/develop) são permitidas.\n\nUse feat|fix|chore|docs|style|refactor|perf|test|build/<descrição>\n"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "chore",
+          "docs",
+          "style",
+          "refactor",
+          "perf",
+          "test",
+          "build"
+        ]
+      ],
+      "scope-empty": [
+        1,
+        "never"
+      ],
+      "subject-min-length": [
+        2,
+        "always",
+        3
+      ]
+    }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "endOfLine": "lf",
+    "htmlWhitespaceSensitivity": "ignore",
+    "jsxSingleQuote": true,
+    "objectWrap": "preserve",
+    "printWidth": 150,
+    "proseWrap": "preserve",
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleAttributePerLine": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false
   }
 }
