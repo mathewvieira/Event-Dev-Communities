@@ -1,13 +1,17 @@
 import '@/App.css'
-import Card from '@/components/Card'
+import Navbar from '@/components/Navbar'
+import Container from '@mui/material/Container'
+import Button from './components/Button'
 
-function App() {
+export default function App() {
   return (
-    <>
-      <h1>Exemplo</h1>
-      <Card />
-    </>
+    <Container>
+      <Navbar />
+      <Button
+        variant='contained'
+        color='success'
+        text='testeeee'
+      />
+    </Container>
   )
 }
-
-export default App

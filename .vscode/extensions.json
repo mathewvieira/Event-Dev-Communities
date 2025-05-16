@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "vincaslt.highlight-matching-tag",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight",
+    "zh9528.file-size",
+    "nhoizey.gremlins",
+    "wix.vscode-import-cost",
+    "kisstkondoros.vscode-gutter-preview",
+    "antfu.iconify",
+    "simonsiefke.svg-preview",
+    "shardulm94.trailing-spaces",
+    "celianriboulet.webvalidator",
+    "usernamehw.errorlens",
+    "formulahendry.auto-close-tag"
+  ]
+}
