@@ -1,17 +1,14 @@
-import '@/App.css'
-import Navbar from '@/components/Navbar'
 import Container from '@mui/material/Container'
-import Button from './components/Button'
+
+import Navbar from '@/shared/components/Navbar'
+
+import { FeaturedCardGroup } from '@/shared/components/FeaturedCard'
 
 export default function App() {
   return (
     <Container>
       <Navbar />
-      <Button
-        variant='contained'
-        color='success'
-        text='testeeee'
-      />
+      <FeaturedCardGroup />
     </Container>
   )
 }
