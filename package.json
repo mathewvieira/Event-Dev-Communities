@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "bdev": "vite build && vite",
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
@@ -46,7 +47,7 @@
     ]
   },
   "validate-branch-name": {
-    "pattern": "^(master|main|develop){1}$|^(feat|fix|chore|docs|style|refactor|perf|test|build)/.+$",
+    "pattern": "^(main|develop){1}$|^(feat|fix|chore|docs|style|refactor|perf|test|build)/.+$",
     "errorMsg": "Branches padrão (main/develop) são permitidas.\n\nUse feat|fix|chore|docs|style|refactor|perf|test|build/<descrição>\n"
   },
   "commitlint": {
@@ -82,7 +83,7 @@
   },
   "prettier": {
     "arrowParens": "always",
-    "bracketSameLine": true,
+    "bracketSameLine": false,
     "bracketSpacing": true,
     "endOfLine": "lf",
     "htmlWhitespaceSensitivity": "ignore",

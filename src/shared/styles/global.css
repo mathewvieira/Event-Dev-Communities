@@ -1,3 +1,5 @@
+/*
+
 body {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@ body {
   box-sizing: content-box;
 }
 
-/* :root {
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -41,4 +43,6 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-} */
+}
+
+*/
