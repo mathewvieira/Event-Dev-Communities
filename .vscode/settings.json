@@ -5,10 +5,10 @@
     "package.json": ".editor*, .git*, vite*, eslint*, jsconfig*, .eslint*, .prettier*, postcss*, tailwind*, package*, .docker*, .env*"
   },
   "files.exclude": {
-    "dist": true,
-    "node_modules": true,
-    ".husky": true,
-    ".vscode": true,
-    "README.md": true
+    "dist": false,
+    "node_modules": false,
+    ".husky": false,
+    ".vscode": false,
+    "README.md": false
   }
 }
