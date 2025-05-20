@@ -60,7 +60,6 @@ export default function Footer() {
                   </Typography>
                   <Link
                     href='/eventos'
-                    underline='hover'
                     color='text.secondary'
                     display='block'
                     sx={{ mb: 1 }}
@@ -69,7 +68,6 @@ export default function Footer() {
                   </Link>
                   <Link
                     href='/comunidades'
-                    underline='hover'
                     color='text.secondary'
                     display='block'
                     sx={{ mb: 1 }}
@@ -140,7 +138,6 @@ export default function Footer() {
                 Built with 💙 by the{' '}
                 <Link
                   href='#'
-                  underline='hover'
                   color='primary'
                 >
                   EventDev
