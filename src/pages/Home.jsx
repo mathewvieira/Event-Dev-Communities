@@ -16,6 +16,13 @@ export default function Home() {
 
       <Container>
         <SectionHeader
+          title='Eventos em Destaque'
+          subtitle='Descubra os próximos eventos das comunidades.'
+          link='#'
+          linkText='Ver todos os eventos'
+        />
+
+        <SectionHeader
           title='Comunidades em Destaque'
           subtitle='Conheça as comunidades dev mais ativas da plataforma'
           link='#'

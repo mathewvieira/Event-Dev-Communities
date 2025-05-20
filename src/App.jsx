@@ -10,14 +10,16 @@ export default function App() {
           path='/'
           element={<Home />}
         />
-        {/* <Route
-          path='/eventos'
-          element={<Events />}
-        />
-        <Route
-          path='/comunidades'
-          element={<Communities />}
-        /> */}
+        {/*
+          <Route
+            path='/eventos'
+            element={<Events />}
+          />
+          <Route
+            path='/comunidades'
+            element={<Communities />}
+          />
+          */}
       </Routes>
     </BrowserRouter>
   )
