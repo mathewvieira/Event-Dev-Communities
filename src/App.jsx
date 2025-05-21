@@ -1,7 +1,5 @@
 import Container from '@mui/material/Container'
-
 import Navbar from '@/shared/components/Navbar'
-
 import { FeaturedCardGroup } from '@/shared/components/FeaturedCard'
 import SectionHeader from './shared/components/SectionHeader'
 import CallToAction from './shared/components/CallToAction'
