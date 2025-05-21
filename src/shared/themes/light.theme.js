@@ -8,10 +8,10 @@ export const lightTheme = {
       contrastText: '#ffffff'
     },
     secondary: {
-      main: '#e91e63',
-      light: '#f48fb1',
-      dark: '#c2185b',
-      contrastText: '#ffffff'
+      main: '#FFFFFF',
+      light: '#e5e5e5',
+      dark: '#e5e5e5',
+      contrastText: '#FF9A63'
     },
     error: {
       main: '#d32f2f',
@@ -40,11 +40,12 @@ export const lightTheme = {
     text: {
       primary: 'rgba(0, 0, 0, 0.87)',
       secondary: 'rgba(0, 0, 0, 0.6)',
-      disabled: 'rgba(0, 0, 0, 0.38)'
+      disabled: 'rgba(0, 0, 0, 0.38)',
+      light: '#FFFFFF'
     },
     background: {
-      default: '#ffffff',
-      paper: '#ffffff'
+      default: '#F8F9FC',
+      paper: '#FFFFFF'
     },
     divider: 'rgba(0, 0, 0, 0.12)',
     action: {
@@ -62,7 +63,7 @@ export const lightTheme = {
     }
   },
   typography: {
-    fontFamily: ['Poppins', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['Inter', 'Arial', 'sans-serif'].join(','),
     h1: {
       fontSize: '2.5rem',
       fontWeight: 700,
@@ -91,13 +92,15 @@ export const lightTheme = {
       fontSize: '1.25rem',
       fontWeight: 600,
       lineHeight: 1.2,
-      letterSpacing: '0em'
+      letterSpacing: '0em',
+      color: '#000000'
     },
     h6: {
       fontSize: '1rem',
       fontWeight: 600,
       lineHeight: 1.2,
-      letterSpacing: '0.0075em'
+      letterSpacing: '0.0075em',
+      color: '#59636E'
     },
     subtitle1: {
       fontSize: '1rem',
@@ -146,7 +149,7 @@ export const lightTheme = {
   },
   spacing: 8,
   shape: {
-    borderRadius: 4
+    borderRadius: 10
   },
   breakpoints: {
     values: {
@@ -179,10 +182,10 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           'textTransform': 'none',
-          'borderRadius': '8px',
+          'borderRadius': '10px',
           'padding': '8px 22px',
           '&:hover': {
-            boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)'
+            boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.1)'
           }
         },
         containedPrimary: {
@@ -196,8 +199,8 @@ export const lightTheme = {
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: '12px',
-          boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.08)'
+          borderRadius: '10px',
+          boxShadow: 'unset'
         }
       }
     },
@@ -215,7 +218,8 @@ export const lightTheme = {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)'
+          backgroundColor: 'white',
+          boxShadow: 'unset'
         }
       }
     },
@@ -223,6 +227,17 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           borderRadius: '16px'
+        }
+      }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          '&': {
+            color: '#FF9A63',
+            textDecoration: 'none',
+            fontWeight: '700'
+          }
         }
       }
     }

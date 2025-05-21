@@ -62,7 +62,7 @@ export const darkTheme = {
     }
   },
   typography: {
-    fontFamily: ['Poppins', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['Inter', 'Arial', 'sans-serif'].join(','),
     h1: {
       fontSize: '2.5rem',
       fontWeight: 700,
