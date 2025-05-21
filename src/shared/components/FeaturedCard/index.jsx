@@ -2,10 +2,8 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import CardActionArea from '@mui/material/CardActionArea'
 import Link from '@mui/material/Link'
-import CardActions from '@mui/material/CardActions'
 import Box from '@mui/material/Box'
 
 import profile from '@/shared/assets/static/images/profile.png'
@@ -39,13 +37,11 @@ export default function FeaturedCard() {
         flexDirection: 'column'
       }}
     >
-      <Link
-        href='#'
-        underline='none'
-      >
+      <Link href='#'>
         <CardActionArea
           sx={{
-            paddingTop: '3rem'
+            paddingTop: '3rem',
+            paddingBottom: '2rem'
           }}
         >
           <CardMedia
@@ -63,7 +59,6 @@ export default function FeaturedCard() {
           <CardContent>
             <Typography
               variant='h5'
-              component='div'
               paddingBottom='20px'
             >
               Lizard
@@ -78,27 +73,14 @@ export default function FeaturedCard() {
               Lizards are a widespread group of squamate reptiles, with over 6,000 species.
             </Typography>
           </CardContent>
-        </CardActionArea>
-      </Link>
 
-      <Link
-        href='#'
-        underline='none'
-      >
-        <CardActions
-          sx={{
-            padding: '1rem 0',
-            display: 'flex',
-            justifyContent: 'center'
-          }}
-        >
-          <Button
-            size='small'
-            color='primary'
+          <Typography
+            fontWeight={700}
+            variant='caption'
           >
             Ver perfil
-          </Button>
-        </CardActions>
+          </Typography>
+        </CardActionArea>
       </Link>
     </Card>
   )
