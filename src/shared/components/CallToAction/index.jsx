@@ -3,7 +3,9 @@ import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
-export default function CallToAction() {
+export default function CallToAction(props) {
+  const { title, subtitles, buttonText } = props
+
   return (
     <Container
       maxWidth={false}
@@ -23,14 +25,18 @@ export default function CallToAction() {
           variant='h3'
           marginBottom='1rem'
         >
-          Teste
+          {title}
         </Typography>
 
         <Typography
           color='text.light'
           variant='body1'
         >
-          Tem uma ideia para um evento na sua comunidade dev? <br /> Crie e compartilhe agora mesmo!
+          {subtitles.map((subtitle) => (
+            <>
+              {subtitle} <br key={subtitle} />
+            </>
+          ))}
         </Typography>
 
         <Button
@@ -38,7 +44,7 @@ export default function CallToAction() {
           variant='contained'
           color='secondary'
         >
-          Começar agora
+          {buttonText}
         </Button>
       </Box>
     </Container>

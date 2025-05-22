@@ -74,7 +74,9 @@ export default function Navbar() {
         <Toolbar
           sx={{
             paddingRight: '0 !important',
-            width: { md: '100%' }
+            width: {
+              sm: '100%'
+            }
           }}
         >
           <Box
@@ -82,8 +84,8 @@ export default function Navbar() {
               flexGrow: 0,
               mr: '0.65rem',
               display: {
-                sm: 'flex',
-                md: 'none'
+                xs: 'flex',
+                sm: 'none'
               }
             }}
           >
@@ -122,8 +124,7 @@ export default function Navbar() {
                 mt: '55px',
                 display: {
                   sm: 'flex',
-                  md: 'none',
-                  lg: 'none'
+                  md: 'none'
                 }
               }}
             >
@@ -138,27 +139,22 @@ export default function Navbar() {
           <Box
             sx={{
               flexGrow: 1,
-              mr: '0.65rem',
+              ml: '0.65rem',
               columnGap: '10px',
               display: {
                 xs: 'none',
-                sm: 'none',
-                md: 'flex',
-                lg: 'flex'
+                sm: 'flex'
               }
             }}
           >
             {pages.map((page) => (
               <Button
                 key={page}
-                variant='outlined'
+                variant='text'
                 color='secondary.light'
                 onClick={handleCloseNavMenu}
                 sx={{
-                  alignItems: 'normal',
-                  borderWidth: '1px',
-                  borderStyle: 'solid',
-                  borderColor: 'secondary.light'
+                  alignItems: 'normal'
                 }}
               >
                 {page}
