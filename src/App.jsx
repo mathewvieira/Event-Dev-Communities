@@ -1,10 +1,8 @@
 import Container from '@mui/material/Container'
-
 import Navbar from '@/shared/components/Navbar'
-
-import { FeaturedCardGroup } from '@/shared/components/FeaturedCard'
-import EventCard from './components/Card'
-import { Grid } from '@mui/material/Grid'
+import FeaturedCardGroup from '@/shared/components/FeaturedCard'
+import EventCard from '@/shared/components/Card'
+import Grid from '@mui/material/Grid'
 
 export default function App() {
   return (
@@ -18,7 +16,7 @@ export default function App() {
         >
           <Grid item>
             <EventCard
-              image='/reactconf.jpg'
+              image='public/images/React Conf Nordest.png'
               title='React Conf Nordeste 2025'
               orgName='Frontend Ceará'
               orgLogo='https://cdn-icons-png.flaticon.com/512/684/684908.png'
@@ -30,7 +28,7 @@ export default function App() {
           </Grid>
           <Grid item>
             <EventCard
-              image='/pythonnordeste.jpg'
+              image='public/images/Python.png'
               title='Python Nordeste 2025'
               orgName='Python Nordeste'
               orgLogo='https://cdn-icons-png.flaticon.com/512/919/919852.png'
@@ -38,6 +36,18 @@ export default function App() {
               date='20/06/2025 à 22/06/2025'
               location='Teresina - PI'
               link='https://www.even3.com.br/python-nordeste-2025/'
+            />
+          </Grid>
+          <Grid item>
+            <EventCard
+              image='public/images/meetu PHP com rapadura.png'
+              title='React Conf Nordeste 2025'
+              orgName='Frontend Ceará'
+              orgLogo='https://cdn-icons-png.flaticon.com/512/684/684908.png'
+              description='A maior conferência de React da América Latina. Palestras, workshops e muito networking'
+              date='16/05/2025'
+              location='Centro de Eventos - Avenida Washington Soares'
+              link='https://www.ingressos.com'
             />
           </Grid>
         </Grid>

@@ -10,5 +10,6 @@
     ".husky": false,
     ".vscode": false,
     "README.md": false
-  }
+  },
+  "liveServer.settings.port": 5501
 }
