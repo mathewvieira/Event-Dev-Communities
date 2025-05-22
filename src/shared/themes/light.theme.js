@@ -2,9 +2,9 @@ export const lightTheme = {
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2',
-      light: '#42a5f5',
-      dark: '#1565c0',
+      main: '#FC692D',
+      light: '#E25E28',
+      dark: '#E25E28',
       contrastText: '#ffffff'
     },
     secondary: {
@@ -106,7 +106,8 @@ export const lightTheme = {
       fontSize: '1rem',
       fontWeight: 400,
       lineHeight: 1.5,
-      letterSpacing: '0.00938em'
+      letterSpacing: '0.00938em',
+      color: '#59636E'
     },
     subtitle2: {
       fontSize: '0.875rem',
@@ -181,11 +182,14 @@ export const lightTheme = {
     MuiButton: {
       styleOverrides: {
         root: {
-          'textTransform': 'none',
-          'borderRadius': '6.5px',
-          'padding': '8px 22px',
+          '&': {
+            textTransform: 'none',
+            borderRadius: '6.5px',
+            padding: '8px 22px',
+            boxShadow: 'unset'
+          },
           '&:hover': {
-            boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.1)'
+            boxShadow: 'unset'
           }
         },
         containedPrimary: {

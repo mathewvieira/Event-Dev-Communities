@@ -1,13 +1,18 @@
 import Container from '@mui/material/Container'
+
 import Navbar from '@/shared/components/Navbar'
+import HeroSection from '@/shared/components/HeroSection'
+import CallToAction from '@/shared/components/CallToAction'
+import SectionHeader from '@/shared/components/SectionHeader'
+
 import { FeaturedCardGroup } from '@/shared/components/FeaturedCard'
-import SectionHeader from './shared/components/SectionHeader'
-import CallToAction from './shared/components/CallToAction'
 
 export default function App() {
   return (
     <>
       <Navbar />
+
+      <HeroSection />
 
       <Container>
         <SectionHeader
@@ -19,7 +24,11 @@ export default function App() {
         <FeaturedCardGroup />
       </Container>
 
-      <CallToAction />
+      <CallToAction
+        title='Crie seu próprio evento'
+        subtitles={['Tem uma ideia para um evento na sua comunidade dev?', 'Crie e compartilhe agora mesmo!']}
+        buttonText='Começar agora'
+      />
     </>
   )
 }
