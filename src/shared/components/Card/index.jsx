@@ -13,21 +13,44 @@ import Stack from '@mui/material/Stack'
 function EventCard(props) {
   const { image, title, orgName, orgLogo, description, date, location, link } = props
   return (
-    <Card sx={{ width: 340, borderRadius: 3, boxShadow: 3, height: 450 }}>
-      <CardMedia
-        component='img'
-        height='180'
-        image={image}
-        alt={title}
-      />
+    <Card sx={{ width: 340, borderRadius: 3, boxShadow: 3, height: 500 }}>
+      <Box sx={{ position: 'relative' }}>
+        <CardMedia
+          component='img'
+          height='300'
+          image={image}
+          alt={title}
+        />
+        <CardContent>
+          <Typography
+            variant='h6'
+            sx={{
+              position: 'absolute',
+              bottom: 8,
+              left: 10,
+              color: '#F8F9FC',
+              padding: '30px 8px',
+              borderRadius: 1,
+              maxWidth: '90%',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              fontFamily: 'Poppins, Arial, sans-serif'
+            }}
+            gutterBottom
+          >
+            {title}
+          </Typography>
+        </CardContent>
+      </Box>
       <CardContent>
         <Typography
           variant='h6'
+          sx={{ mt: -5, borderBottom: '1px solid #E8E8E8', left: 2 }}
           gutterBottom
         >
           {title}
         </Typography>
-
         <Box
           display='flex'
           alignItems='center'
