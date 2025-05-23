@@ -10,7 +10,8 @@ export default function Button(props) {
       size={size}
       startIcon={startIcon}
       endIcon={endIcon}
-      {...other}>
+      {...other}
+    >
       {text}
     </MuiButton>
   )

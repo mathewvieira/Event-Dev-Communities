@@ -11,13 +11,21 @@ import profile from '@/shared/assets/static/images/profile.png'
 export function FeaturedCardGroup() {
   return (
     <Box
-      sx={{
+      sx={(theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
         rowGap: '1.5em',
-        marginTop: '1.5rem'
-      }}
+        columnGap: '20px',
+        marginTop: '1.5rem',
+        [theme.breakpoints.down('lg')]: {
+          columnGap: '10px'
+        },
+        [theme.breakpoints.down('sm')]: {
+          columnGap: '0',
+          justifyContent: 'stretch'
+        }
+      })}
     >
       <FeaturedCard />
       <FeaturedCard />
@@ -30,19 +38,31 @@ export function FeaturedCardGroup() {
 export default function FeaturedCard() {
   return (
     <Card
-      sx={{
-        maxWidth: '265px',
+      sx={(theme) => ({
+        width: '265px',
         textAlign: 'center',
         display: 'inline-flex',
-        flexDirection: 'column'
-      }}
+        flexDirection: 'column',
+        [theme.breakpoints.down('lg')]: {
+          width: '47.5%'
+        },
+        [theme.breakpoints.down('sm')]: {
+          width: '100%'
+        }
+      })}
     >
       <Link href='#'>
         <CardActionArea
-          sx={{
+          sx={(theme) => ({
             paddingTop: '3rem',
-            paddingBottom: '2rem'
-          }}
+            paddingBottom: '2rem',
+            [theme.breakpoints.down('lg')]: {
+              paddingX: '7.5%'
+            },
+            [theme.breakpoints.down('sm')]: {
+              paddingX: '7.5%'
+            }
+          })}
         >
           <CardMedia
             component='img'
