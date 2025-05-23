@@ -149,7 +149,7 @@ export const lightTheme = {
   },
   spacing: 8,
   shape: {
-    borderRadius: 10
+    borderRadius: '6.5px'
   },
   breakpoints: {
     values: {
@@ -182,7 +182,7 @@ export const lightTheme = {
       styleOverrides: {
         root: {
           'textTransform': 'none',
-          'borderRadius': '10px',
+          'borderRadius': '6.5px',
           'padding': '8px 22px',
           '&:hover': {
             boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.1)'
@@ -199,7 +199,7 @@ export const lightTheme = {
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: '10px',
+          borderRadius: '6.5px',
           boxShadow: 'unset'
         }
       }
@@ -237,6 +237,12 @@ export const lightTheme = {
             color: '#FF9A63',
             textDecoration: 'none',
             fontWeight: '700'
+          },
+          '&:hover': {
+            color: '#db5004'
+          },
+          '&:active': {
+            color: '#b03500'
           }
         }
       }

@@ -7,8 +7,9 @@ import CallToAction from './shared/components/CallToAction'
 export default function App() {
   return (
     <>
+      <Navbar />
+
       <Container>
-        <Navbar />
         <SectionHeader
           title='Comunidades em Destaque'
           subtitle='Conheça as comunidades dev mais ativas da plataforma'

@@ -8,18 +8,34 @@ export default function SectionHeader(props) {
   return (
     <Box
       my={'3rem'}
-      sx={{
+      sx={(theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center'
-      }}
+        alignItems: 'center',
+        [theme.breakpoints.down('sm')]: {
+          display: 'block',
+          textAlign: 'center'
+        }
+      })}
     >
-      <Box>
+      <Box
+        sx={(theme) => ({
+          [theme.breakpoints.down('sm')]: {
+            // display: 'block'
+          }
+        })}
+      >
         <Typography variant='h3'>{title}</Typography>
         <Typography variant='subtitle1'>{subtitle}</Typography>
       </Box>
 
-      <Box>
+      <Box
+        sx={(theme) => ({
+          [theme.breakpoints.down('sm')]: {
+            mt: '2rem'
+          }
+        })}
+      >
         <Link
           href={link}
           variant='body2'
