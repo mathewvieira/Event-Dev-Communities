@@ -13,11 +13,11 @@ import Stack from '@mui/material/Stack'
 function EventCard(props) {
   const { image, title, orgName, orgLogo, description, date, location, link } = props
   return (
-    <Card sx={{ width: 340, borderRadius: 3, boxShadow: 3, height: 500 }}>
+    <Card sx={{ width: 330, borderRadius: 3, boxShadow: 3, height: 510 }}>
       <Box sx={{ position: 'relative' }}>
         <CardMedia
           component='img'
-          height='300'
+          height='250'
           image={image}
           alt={title}
         />
