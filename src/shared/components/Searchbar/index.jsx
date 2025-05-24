@@ -1,59 +1,113 @@
-import React from 'react'
-import Box from '@mui/material/Box'
+import { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
-import IconButton from '@mui/material/IconButton'
-import MenuItem from '@mui/material/MenuItem'
+import Box from '@mui/material/Box'
 import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import ToggleButton from '@mui/material/ToggleButton'
 import SearchIcon from '@mui/icons-material/Search'
-import GridViewIcon from '@mui/icons-material/GridView'
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import AppsIcon from '@mui/icons-material/Apps'
+import EventIcon from '@mui/icons-material/Event'
 
-export default function SearchBarGroup() {
-  const [filter, setFilter] = React.useState('Mais próximos')
+export default function SearchBarWithControls() {
+  const [view, setView] = useState('calendar')
+  const [filter, setFilter] = useState('nearby')
 
   return (
     <Box
-      display='flex'
-      gap={1}
-      alignItems='center'
-      sx={{ backgroundColor: '#f9fafb', padding: 2 }}
+      sx={{
+        backgroundColor: '#f9fafb',
+        p: 2,
+        display: 'flex',
+        justifyContent: 'center'
+      }}
     >
-      {/* Campo de busca */}
-      <TextField
-        variant='outlined'
-        placeholder='Buscar eventos...'
-        size='small'
-        sx={{ flex: 1 }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position='start'>
-              <SearchIcon />
-            </InputAdornment>
-          )
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: 1200,
+          gap: 2
         }}
-      />
-
-      {/* Filtro dropdown */}
-      <Select
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        size='small'
-        sx={{ minWidth: 150 }}
       >
-        <MenuItem value='Mais próximos'>Mais próximos</MenuItem>
-        <MenuItem value='Mais recentes'>Mais recentes</MenuItem>
-        <MenuItem value='Mais populares'>Mais populares</MenuItem>
-      </Select>
+        {/* Barra de Pesquisa */}
+        <TextField
+          placeholder='Buscar eventos...'
+          variant='outlined'
+          fullWidth
+          sx={{
+            'backgroundColor': 'white',
+            'borderRadius': 2,
+            'boxShadow': '0 0 0 1px #e0e0e0',
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            }
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position='start'>
+                <SearchIcon color='action' />
+              </InputAdornment>
+            )
+          }}
+        />
 
-      {/* Botões de visualização */}
-      <IconButton>
-        <GridViewIcon />
-      </IconButton>
+        {/* Filtro de ordenação */}
+        <Select
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          sx={{
+            'backgroundColor': 'white',
+            'borderRadius': 2,
+            'boxShadow': '0 0 0 1px #e0e0e0',
+            'height': 44,
+            'minWidth': 150,
+            '& fieldset': {
+              border: 'none'
+            }
+          }}
+        >
+          <MenuItem value='nearby'>Mais próximos</MenuItem>
+          <MenuItem value='recent'>Mais recentes</MenuItem>
+          <MenuItem value='popular'>Populares</MenuItem>
+        </Select>
 
-      <IconButton sx={{ 'backgroundColor': '#ff6b00', 'color': 'white', '&:hover': { backgroundColor: '#e65c00' } }}>
-        <CalendarMonthIcon />
-      </IconButton>
+        {/* Botões de visualização */}
+        <ToggleButtonGroup
+          value={view}
+          exclusive
+          onChange={(_, val) => {
+            if (val) setView(val)
+          }}
+          sx={{
+            backgroundColor: '#f9fafb',
+            borderRadius: '12px',
+            p: '4px',
+            boxShadow: '0 0 0 1px #e0e0e0'
+          }}
+        >
+          <ToggleButton
+            value='grid'
+            // style={{ backgroundColor: view === 'grid' ? 'red' : '' }}
+            sx={{
+              border: 'none',
+              borderRadius: '10px',
+              minWidth: 44,
+              height: 44
+            }}
+          >
+            <AppsIcon />
+          </ToggleButton>
+          <ToggleButton
+            value='calendar'
+            // style={{ backgroundColor: view === 'calendar' ? 'red' : '' }}
+          >
+            <EventIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
     </Box>
   )
 }
