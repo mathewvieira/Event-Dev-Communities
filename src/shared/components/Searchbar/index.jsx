@@ -1,14 +1,16 @@
 import { useState } from 'react'
-import TextField from '@mui/material/TextField'
-import InputAdornment from '@mui/material/InputAdornment'
+
 import Box from '@mui/material/Box'
 import Select from '@mui/material/Select'
 import MenuItem from '@mui/material/MenuItem'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import TextField from '@mui/material/TextField'
 import ToggleButton from '@mui/material/ToggleButton'
-import SearchIcon from '@mui/icons-material/Search'
+import InputAdornment from '@mui/material/InputAdornment'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+
 import AppsIcon from '@mui/icons-material/Apps'
 import EventIcon from '@mui/icons-material/Event'
+import SearchIcon from '@mui/icons-material/Search'
 
 export default function SearchBarWithControls() {
   const [view, setView] = useState('calendar')
@@ -17,10 +19,10 @@ export default function SearchBarWithControls() {
   return (
     <Box
       sx={{
-        backgroundColor: '#f9fafb',
-        p: 2,
         display: 'flex',
-        justifyContent: 'center'
+        mb: '2rem',
+        justifyContent: 'center',
+        backgroundColor: '#f9fafb'
       }}
     >
       <Box
@@ -32,40 +34,47 @@ export default function SearchBarWithControls() {
           gap: 2
         }}
       >
-        {/* Barra de Pesquisa */}
         <TextField
           placeholder='Buscar eventos...'
           variant='outlined'
           fullWidth
           sx={{
-            'backgroundColor': 'white',
-            'borderRadius': 2,
-            'boxShadow': '0 0 0 1px #e0e0e0',
-            'height': 44,
-            'minWidth': 150,
+            '&': {
+              height: 44,
+              minWidth: 150,
+              borderRadius: 2,
+              backgroundColor: 'white',
+              boxShadow: '0 0 0 1px #e0e0e0'
+            },
             '& .MuiOutlinedInput-notchedOutline': {
               border: 'none'
+            },
+            '& .MuiInputBase-root': {
+              height: '44px'
             }
           }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <SearchIcon color='action' />
-              </InputAdornment>
-            )
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position='start'>
+                  <SearchIcon color='action' />
+                </InputAdornment>
+              )
+            }
           }}
         />
 
-        {/* Filtro de ordenação */}
         <Select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           sx={{
-            'backgroundColor': 'white',
-            'borderRadius': 2,
-            'boxShadow': '0 0 0 1px #e0e0e0',
-            'height': 44,
-            'minWidth': 190,
+            '&': {
+              backgroundColor: 'white',
+              borderRadius: 2,
+              boxShadow: '0 0 0 1px #e0e0e0',
+              height: 44,
+              minWidth: 190
+            },
             '& fieldset': {
               border: 'none'
             }
@@ -76,7 +85,6 @@ export default function SearchBarWithControls() {
           <MenuItem value='popular'>Populares</MenuItem>
         </Select>
 
-        {/* Botões de visualização */}
         <ToggleButtonGroup
           value={view}
           exclusive
