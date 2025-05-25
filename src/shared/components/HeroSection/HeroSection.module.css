@@ -1,0 +1,39 @@
+.heroSection {
+  background: linear-gradient(to right, #f4c542, #ff9a63);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  min-height: 10vh;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: white;
+  margin-bottom: 32px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.whiteButton {
+  background-color: white;
+  color: #000;
+  font-weight: bold;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.whiteButton:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.image {
+  width: 80%;
+  border-radius: 16px;
+}
