@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import Box from '@mui/material/Box'
+import Link from '@mui/material/Link'
 import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
 import AppBar from '@mui/material/AppBar'
@@ -57,6 +58,7 @@ export default function Navbar() {
       color='transparent'
     >
       <Container
+        maxWidth='xl'
         sx={{
           display: 'flex',
           height: '4.5rem',
@@ -64,11 +66,13 @@ export default function Navbar() {
           justifyContent: 'space-between'
         }}
       >
-        <img
-          src={logoImage}
-          alt='Logo'
-          width={80}
-        />
+        <Link href='/'>
+          <img
+            src={logoImage}
+            alt='Logo'
+            width={80}
+          />
+        </Link>
 
         <Toolbar
           sx={{
@@ -151,6 +155,7 @@ export default function Navbar() {
                 key={page}
                 variant='text'
                 color='secondary.light'
+                href={`/${page.toLowerCase()}`}
                 onClick={handleCloseNavMenu}
                 sx={{
                   alignItems: 'normal'
@@ -171,6 +176,7 @@ export default function Navbar() {
           >
             {!currentUser ? (
               <Button
+                href='/login'
                 onClick={handleLoginClick}
                 sx={{
                   color: 'white',
@@ -182,6 +188,7 @@ export default function Navbar() {
             ) : (
               <Tooltip>
                 <Button
+                  href='/login'
                   onClick={handleCreateEvent}
                   sx={{
                     color: 'white',

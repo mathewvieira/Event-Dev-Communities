@@ -4,29 +4,8 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import CardActionArea from '@mui/material/CardActionArea'
 import Link from '@mui/material/Link'
-import Box from '@mui/material/Box'
 
 import profile from '@/shared/assets/static/images/profile.png'
-
-export function FeaturedCardGroup() {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: { sm: 'stretch', md: 'space-between' },
-        flexWrap: 'wrap',
-        rowGap: { xs: '20px', sm: '10px' },
-        columnGap: { sm: '10px', md: '10px' },
-        marginTop: '1.5rem'
-      }}
-    >
-      <FeaturedCard />
-      <FeaturedCard />
-      <FeaturedCard />
-      <FeaturedCard />
-    </Box>
-  )
-}
 
 export default function FeaturedCard() {
   return (

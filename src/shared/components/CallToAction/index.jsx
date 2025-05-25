@@ -4,7 +4,7 @@ import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 export default function CallToAction(props) {
-  const { title, subtitles, buttonText } = props
+  const { title, subtitles, buttonText, link } = props
 
   return (
     <Container
@@ -41,9 +41,10 @@ export default function CallToAction(props) {
         </Typography>
 
         <Button
-          sx={{ marginTop: '2.5em' }}
-          variant='contained'
+          href={link}
           color='secondary'
+          variant='contained'
+          sx={{ marginTop: '2.5em' }}
         >
           {buttonText}
         </Button>
