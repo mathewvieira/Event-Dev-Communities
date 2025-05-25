@@ -41,6 +41,8 @@ export default function SearchBarWithControls() {
             'backgroundColor': 'white',
             'borderRadius': 2,
             'boxShadow': '0 0 0 1px #e0e0e0',
+            'height': 44,
+            'minWidth': 150,
             '& .MuiOutlinedInput-notchedOutline': {
               border: 'none'
             }
@@ -63,7 +65,7 @@ export default function SearchBarWithControls() {
             'borderRadius': 2,
             'boxShadow': '0 0 0 1px #e0e0e0',
             'height': 44,
-            'minWidth': 150,
+            'minWidth': 190,
             '& fieldset': {
               border: 'none'
             }
@@ -81,16 +83,10 @@ export default function SearchBarWithControls() {
           onChange={(_, val) => {
             if (val) setView(val)
           }}
-          sx={{
-            backgroundColor: '#f9fafb',
-            borderRadius: '12px',
-            p: '4px',
-            boxShadow: '0 0 0 1px #e0e0e0'
-          }}
         >
           <ToggleButton
             value='grid'
-            // style={{ backgroundColor: view === 'grid' ? 'red' : '' }}
+            style={{ backgroundColor: view === 'grid' ? '#FC692D' : '' }}
             sx={{
               border: 'none',
               borderRadius: '10px',
@@ -102,7 +98,13 @@ export default function SearchBarWithControls() {
           </ToggleButton>
           <ToggleButton
             value='calendar'
-            // style={{ backgroundColor: view === 'calendar' ? 'red' : '' }}
+            style={{ backgroundColor: view === 'calendar' ? '#FC692D' : '' }}
+            sx={{
+              border: 'none',
+              borderRadius: '10px',
+              minWidth: 44,
+              height: 44
+            }}
           >
             <EventIcon />
           </ToggleButton>

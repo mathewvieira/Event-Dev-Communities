@@ -7,10 +7,12 @@ import SearchBarGroup from './shared/components/Searchbar'
 
 export default function App() {
   return (
-    <Container>
-      <Navbar />
-      <FeaturedCardGroup />
-      <SearchBarGroup />
-    </Container>
+    <>
+      <Container>
+        <Navbar />
+        <FeaturedCardGroup />
+        <SearchBarGroup />
+      </Container>
+    </>
   )
 }
