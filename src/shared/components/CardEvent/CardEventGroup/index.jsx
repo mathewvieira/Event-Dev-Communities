@@ -1,7 +1,8 @@
 import Box from '@mui/material/Box'
-import CardEvent from '..'
 
-export function CardEventGroup() {
+import CardEvent from '@/shared/components/CardEvent'
+
+export default function CardEventGroup() {
   return (
     <Box
       sx={{

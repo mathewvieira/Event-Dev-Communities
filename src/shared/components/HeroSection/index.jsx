@@ -14,7 +14,7 @@ export default function HeroSection() {
         minHeight: '10vh'
       }}
     >
-      <Container>
+      <Container maxWidth='xl'>
         <Box
           sx={{
             display: 'flex',
