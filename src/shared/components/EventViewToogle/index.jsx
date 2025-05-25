@@ -37,6 +37,10 @@ export default function EventViewToogle() {
                 '&:hover': {
                   backgroundColor: eventType === type ? '#fff' : '#e5e7eb'
                 },
+<<<<<<< HEAD
+=======
+                // Força que ao focar o botão selecionado o fundo fique branco também
+>>>>>>> 17ffced (feat(toggle): add filter for upcoming and online events)
                 '&.Mui-selected, &.Mui-selected:hover': {
                   backgroundColor: '#fff'
                 }
