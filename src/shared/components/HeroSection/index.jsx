@@ -31,7 +31,8 @@ export default function HeroSection() {
                 fontSize: '55px',
                 fontWeight: 'bold',
                 lineHeight: '3.5rem',
-                marginBottom: '1rem'
+                marginBottom: '1rem',
+                textAlign: { xs: 'center', md: 'left' }
               }}
             >
               Conecte-se <br />
@@ -53,8 +54,10 @@ export default function HeroSection() {
 
             <Box
               sx={{
+                gap: '16px',
                 display: 'flex',
-                gap: '16px'
+                paddingBottom: { xs: '5rem', md: '1rem' },
+                justifyContent: { xs: 'center', md: 'start' }
               }}
             >
               <Button
@@ -80,16 +83,16 @@ export default function HeroSection() {
             sx={{
               flex: 1,
               display: 'flex',
-              justifyContent: 'end'
+              justifyContent: { xs: 'center', md: 'end' }
             }}
           >
             <Box
+              component='img'
               src={image}
               alt='Evento'
-              component='img'
               sx={{
-                width: '100%',
-                borderRadius: '16px'
+                borderRadius: '16px',
+                width: { xs: '80%', md: '100%' }
               }}
             />
           </Box>

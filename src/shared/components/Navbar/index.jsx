@@ -66,9 +66,8 @@ export default function Navbar() {
       >
         <img
           src={logoImage}
-          width={80}
           alt='Logo'
-          loading='lazy'
+          width={80}
         />
 
         <Toolbar

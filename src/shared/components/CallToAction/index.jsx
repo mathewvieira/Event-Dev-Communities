@@ -16,7 +16,8 @@ export default function CallToAction(props) {
         justifyContent: 'center',
         backgroundColor: '#FC692D',
         padding: '75px 0',
-        margin: '5rem 0'
+        marginTop: '5rem',
+        marginBottom: '3rem'
       }}
     >
       <Box>
@@ -33,9 +34,9 @@ export default function CallToAction(props) {
           variant='body1'
         >
           {subtitles.map((subtitle) => (
-            <>
-              {subtitle} <br key={subtitle} />
-            </>
+            <span key={`span_${subtitle}`}>
+              {subtitle} <br key={`br_${subtitle}`} />
+            </span>
           ))}
         </Typography>
 
