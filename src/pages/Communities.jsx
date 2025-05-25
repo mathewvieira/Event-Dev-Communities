@@ -2,7 +2,10 @@ import Container from '@mui/material/Container'
 
 export default function Communities() {
   return (
-    <Container maxWidth='xl'>
+    <Container
+      maxWidth='xl'
+      sx={{ paddingTop: '4.5rem' }}
+    >
       <h1>Comunidades</h1>
     </Container>
   )

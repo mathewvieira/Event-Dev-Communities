@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-
 import HeroSection from '@/shared/components/HeroSection'
 import CallToAction from '@/shared/components/CallToAction'
 import SectionHeader from '@/shared/components/SectionHeader'
