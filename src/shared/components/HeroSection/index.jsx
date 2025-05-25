@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import image from '@/shared/assets/static/images/img.png'
+import eventImg from '@/shared/assets/static/images/event-img.jpg'
 
 export default function HeroSection() {
   return (
@@ -18,12 +18,13 @@ export default function HeroSection() {
         <Box
           sx={{
             display: 'flex',
+
             justifyContent: 'space-between',
             alignItems: 'center',
             flexDirection: { xs: 'column', md: 'row' }
           }}
         >
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, maxWidth: '600px' }}>
             <Typography
               variant='h1'
               sx={{
@@ -32,12 +33,10 @@ export default function HeroSection() {
                 fontWeight: 'bold',
                 lineHeight: '3.5rem',
                 marginBottom: '1rem',
-                textAlign: { xs: 'center', md: 'left' }
+                textAlign: { xs: 'left', md: 'left' }
               }}
             >
-              Conecte-se <br />
-              com as melhores <br />
-              comunidades dev
+              Conecte-se com as melhores comunidades dev
             </Typography>
 
             <Typography
@@ -45,11 +44,11 @@ export default function HeroSection() {
               sx={{
                 color: 'white',
                 fontWeight: '300',
-                marginBottom: '2.35rem'
+                marginBottom: '2.35rem',
+                maxWidth: '500px'
               }}
             >
-              Descubra, participe e crie eventos incríveis com <br />
-              comunidades de desenvolvedores do Nordeste.
+              Descubra, participe e crie eventos incríveis com comunidades de desenvolvedores do Nordeste.
             </Typography>
 
             <Box
@@ -72,7 +71,9 @@ export default function HeroSection() {
                 variant='contained'
                 color='secondary'
                 size='large'
-                sx={{ fontWeight: '700' }}
+                sx={{
+                  fontWeight: '700'
+                }}
               >
                 Criar Eventos
               </Button>
@@ -82,17 +83,17 @@ export default function HeroSection() {
           <Box
             sx={{
               flex: 1,
-              display: 'flex',
+              display: { xs: 'none', md: 'flex' },
               justifyContent: { xs: 'center', md: 'end' }
             }}
           >
             <Box
               component='img'
-              src={image}
+              src={eventImg}
               alt='Evento'
               sx={{
-                borderRadius: '16px',
-                width: { xs: '80%', md: '100%' }
+                borderRadius: '10px',
+                width: { xs: '100%', md: '80%' }
               }}
             />
           </Box>

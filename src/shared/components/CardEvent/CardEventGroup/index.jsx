@@ -9,7 +9,6 @@ export default function CardEventGroup() {
         display: 'flex',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        gap: '40px',
         marginTop: '1.5rem'
       }}
     >
