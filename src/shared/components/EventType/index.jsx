@@ -12,7 +12,6 @@ export default function EventTypeSelector() {
       <Box
         sx={{
           p: '6px',
-          mb: '2rem',
           borderRadius: '8px',
           display: 'inline-flex',
           backgroundColor: '#F1F5F9 '
