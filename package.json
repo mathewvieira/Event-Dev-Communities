@@ -22,8 +22,7 @@
     "@mui/material": "^7.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.0",
-    "terser": "5.39.2"
+    "react-router-dom": "^7.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
@@ -39,6 +38,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
     "prettier": "^3.5.3",
+    "terser": "^5.39.2",
     "validate-branch-name": "^1.3.2",
     "vite": "^6.3.5"
   },
