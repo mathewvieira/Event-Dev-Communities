@@ -10,7 +10,6 @@ export default function CardEventGroup() {
         flexWrap: 'wrap',
         rowGap: '1rem',
         columnGap: '1rem',
-        marginTop: '1.5rem',
         justifyContent: { sm: 'space-evenly', md: 'space-between' }
       }}
     >
