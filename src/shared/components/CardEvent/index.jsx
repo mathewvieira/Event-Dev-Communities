@@ -18,16 +18,15 @@ export default function CardEvent() {
   return (
     <Card
       sx={{
+        boxSizing: 'border-box',
+        borderRadius: 2,
+        width: '100%',
         maxWidth: {
           xs: '100%',
           sm: '100%',
           md: '32%'
-        },
-        borderRadius: 2,
-        width: '100%',
-        boxSizing: 'border-box'
-      }}
-    >
+        }
+      }}>
       <CardActionArea>
         <Box sx={{ position: 'relative', height: 300 }}>
           <CardMedia
@@ -50,14 +49,12 @@ export default function CardEvent() {
               alignItems: 'flex-end',
               justifyContent: 'left',
               bgcolor: 'rgba(0, 0, 0, 0.2)'
-            }}
-          >
+            }}>
             <Typography
               variant='h5'
               component='div'
               color='common.white'
-              sx={{ marginBottom: 2 }}
-            >
+              sx={{ marginBottom: 2 }}>
               React Conf Nordeste 2025
             </Typography>
           </Box>
@@ -72,15 +69,13 @@ export default function CardEvent() {
               gutterBottom
               variant='h5'
               sx={{ margin: 0 }}
-              component='div'
-            >
+              component='div'>
               Frontend Ceará
             </Typography>
           </Box>
           <Typography
             variant='body2'
-            sx={{ color: 'text.secondary', borderTop: '1px solid #e0e0e0', marginTop: 1, py: 2 }}
-          >
+            sx={{ color: 'text.secondary', borderTop: '1px solid #e0e0e0', marginTop: 1, py: 2 }}>
             A maior conferência de React da América Latina. Palestras, workshops e muito networking.
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -88,8 +83,7 @@ export default function CardEvent() {
               <CalendarTodayIcon sx={{ color: '#64748B' }} />
               <Typography
                 variant='body2'
-                sx={{ color: '#64748B' }}
-              >
+                sx={{ color: '#64748B' }}>
                 12 de Junho de 2025
               </Typography>
             </Box>
@@ -97,8 +91,7 @@ export default function CardEvent() {
               <PlaceOutlinedIcon sx={{ color: '#64748B' }} />
               <Typography
                 variant='body2'
-                sx={{ color: '#64748B' }}
-              >
+                sx={{ color: '#64748B' }}>
                 Centro de Eventos - Avenida Washington Soares
               </Typography>
             </Box>
@@ -109,8 +102,7 @@ export default function CardEvent() {
                 underline='hover'
                 target='_blank'
                 rel='noopener'
-                sx={{ color: 'primary.main', textDecoration: 'none' }}
-              >
+                sx={{ color: 'primary.main', textDecoration: 'none' }}>
                 seu-link.com
               </Link>
             </Box>

@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import styles from './Login.module.css'
 import Button from '@mui/material/Button'
+import Link from '@mui/material/Link'
 
 export default function FormLogin() {
   return (
@@ -72,6 +73,23 @@ export default function FormLogin() {
       >
         Entrar
       </Button>
+      <Typography
+        variant='body2'
+        component='p'
+        sx={{ marginTop: '1rem', textAlign: 'center' }}
+        underline='hover'
+      >
+        Ainda não tem uma conta?{' '}
+        <Link
+          href='/cadastro-comunidade'
+          underline='hover'
+          color='text.secondary'
+          display='block'
+          sx={{ color: '#FC692D', textDecoration: 'none', fontWeight: 'bold' }}
+        >
+          Cadastre-se aqui
+        </Link>
+      </Typography>
       <Typography
         variant='body1'
         component='p'

@@ -14,7 +14,7 @@ import logoDigital from '@/shared/assets/static/images/digital-college.png'
 
 export default function Footer() {
   return (
-    <Box sx={{ padding: '2rem', width: '100%', borderTop: '1px solid #e0e0e0' }}>
+    <Box sx={{ marginTop: '5rem', padding: '2rem', width: '100%', borderTop: '1px solid #e0e0e0' }}>
       <Box sx={{ margin: '0 auto' }}>
         <Box
           sx={{
@@ -22,15 +22,13 @@ export default function Footer() {
             flexWrap: 'wrap',
             gap: 4,
             justifyContent: 'space-between'
-          }}
-        >
+          }}>
           <Box
             sx={{
               flexGrow: 1,
               flexBasis: { xs: '100%', md: '60%' },
               minWidth: '280px'
-            }}
-          >
+            }}>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 4 }}>
               <Box sx={{ flex: 1, maxWidth: '400px' }}>
                 <Box sx={{ mb: 2 }}>
@@ -43,8 +41,7 @@ export default function Footer() {
                 </Box>
                 <Typography
                   variant='body2'
-                  color='text.secondary'
-                >
+                  color='text.secondary'>
                   Conectando comunidades de desenvolvedores do nordeste através de eventos incríveis. Encontre eventos, crie sua comunidade e faça
                   parte deste ecossistema.
                 </Typography>
@@ -53,8 +50,7 @@ export default function Footer() {
                 <Typography
                   variant='subtitle2'
                   fontWeight='bold'
-                  sx={{ mb: 1 }}
-                >
+                  sx={{ mb: 1 }}>
                   Navegue
                 </Typography>
                 <Link
@@ -62,8 +58,7 @@ export default function Footer() {
                   underline='hover'
                   color='text.secondary'
                   display='block'
-                  sx={{ mb: 1 }}
-                >
+                  sx={{ mb: 1 }}>
                   Eventos
                 </Link>
                 <Link
@@ -71,8 +66,7 @@ export default function Footer() {
                   underline='hover'
                   color='text.secondary'
                   display='block'
-                  sx={{ mb: 1 }}
-                >
+                  sx={{ mb: 1 }}>
                   Comunidades
                 </Link>
               </Box>
@@ -84,22 +78,19 @@ export default function Footer() {
               flexGrow: 1,
               flexBasis: { xs: '100%', md: '35%' },
               minWidth: '200px'
-            }}
-          >
+            }}>
             <Typography
               variant='subtitle2'
               fontWeight='bold'
-              sx={{ mb: 1 }}
-            >
-              Apoio:
+              sx={{ mb: 1 }}>
+              Apoio
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 8 }}>
               <Link
                 href='https://geracaotech.iel-ce.org.br/'
                 target='_blank'
                 rel='noopener noreferrer'
-                sx={{ maxWidth: 130 }}
-              >
+                sx={{ maxWidth: 130 }}>
                 <img
                   src={logoGeracao}
                   alt='Geração Tech 2.0'
@@ -110,8 +101,7 @@ export default function Footer() {
                 href='https://digitalcollege.com.br/'
                 target='_blank'
                 rel='noopener noreferrer'
-                sx={{ maxWidth: 130 }}
-              >
+                sx={{ maxWidth: 130 }}>
                 <img
                   src={logoDigital}
                   alt='Digital College'
@@ -129,19 +119,16 @@ export default function Footer() {
         <Grid
           container
           justifyContent='space-between'
-          alignItems='center'
-        >
+          alignItems='center'>
           <Grid>
             <Typography
               variant='body2'
-              color='text.secondary'
-            >
+              color='text.secondary'>
               Built with 💙 by the{' '}
               <Link
                 href='#'
                 underline='hover'
-                color='primary'
-              >
+                color='primary'>
                 EventDev
               </Link>{' '}
               community.
@@ -152,22 +139,19 @@ export default function Footer() {
               <IconButton
                 href='https://instagram.com'
                 target='_blank'
-                size='small'
-              >
+                size='small'>
                 <Instagram />
               </IconButton>
               <IconButton
                 href='https://github.com'
                 target='_blank'
-                size='small'
-              >
+                size='small'>
                 <GitHub />
               </IconButton>
               <IconButton
                 href='https://linkedin.com'
                 target='_blank'
-                size='small'
-              >
+                size='small'>
                 <LinkedIn />
               </IconButton>
             </Box>

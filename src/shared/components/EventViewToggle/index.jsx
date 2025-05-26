@@ -12,18 +12,16 @@ export default function EventViewToggle() {
       <Box
         sx={{
           p: '6px',
-          mt: '0.5rem',
+          my: '1rem',
           borderRadius: '8px',
           display: 'inline-flex',
           backgroundColor: '#f4f6f8'
-        }}
-      >
+        }}>
         <ToggleButtonGroup
           value={eventType}
           exclusive
           onChange={(_, val) => val && setEventType(val)}
-          sx={{ gap: 1 }}
-        >
+          sx={{ gap: 1 }}>
           {['proximos', 'online'].map((type) => (
             <ToggleButton
               key={type}
@@ -47,8 +45,7 @@ export default function EventViewToggle() {
                 '&.Mui-selected, &.Mui-selected:hover': {
                   backgroundColor: '#fff'
                 }
-              }}
-            >
+              }}>
               {type === 'proximos' && 'Próximos Eventos'}
               {type === 'online' && 'Eventos Online'}
             </ToggleButton>

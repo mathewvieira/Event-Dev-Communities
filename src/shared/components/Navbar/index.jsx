@@ -67,8 +67,7 @@ export default function Navbar() {
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
-      }}
-    >
+      }}>
       <Container
         maxWidth='xl'
         sx={{
@@ -76,8 +75,7 @@ export default function Navbar() {
           height: '4.5rem',
           alignItems: 'center',
           justifyContent: 'space-between'
-        }}
-      >
+        }}>
         <Link href='/'>
           <img
             src={logoImage}
@@ -92,8 +90,7 @@ export default function Navbar() {
             width: {
               sm: '100%'
             }
-          }}
-        >
+          }}>
           <Box
             sx={{
               flexGrow: 0,
@@ -102,8 +99,7 @@ export default function Navbar() {
                 xs: 'flex',
                 sm: 'none'
               }
-            }}
-          >
+            }}>
             <IconButton
               id='long-button'
               aria-label='more'
@@ -113,8 +109,7 @@ export default function Navbar() {
               onClick={handleOpenNavMenu}
               sx={{
                 color: 'text.primary'
-              }}
-            >
+              }}>
               <MenuIcon />
             </IconButton>
 
@@ -138,8 +133,7 @@ export default function Navbar() {
                   sm: 'flex',
                   md: 'none'
                 }
-              }}
-            >
+              }}>
               {pages.map((page) => (
                 <MenuItem key={page}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
@@ -157,23 +151,24 @@ export default function Navbar() {
                 xs: 'none',
                 sm: 'flex'
               }
-            }}
-          >
+            }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 variant='text'
-                color='secondary.light'
-                href={`/${page.toLowerCase()}`}
+                underline='hover'
+                color='primary.light'
                 onClick={handleCloseNavMenu}
+                href={`/${page.toLowerCase()}`}
                 sx={{
-                  'alignItems': 'normal',
-                  'fontWeight': '700',
+                  '&': {
+                    alignItems: 'normal',
+                    fontWeight: '700'
+                  },
                   '&:hover': {
-                    color: '#FC692D'
+                    color: 'primary.main'
                   }
-                }}
-              >
+                }}>
                 {page}
               </Button>
             ))}
@@ -185,14 +180,12 @@ export default function Navbar() {
               paddingX: 0,
               display: 'flex',
               alignItems: 'center'
-            }}
-          >
+            }}>
             {!currentUser ? (
               <Button
                 href='/login'
                 variant='contained'
-                onClick={handleLoginClick}
-              >
+                onClick={handleLoginClick}>
                 Entrar
               </Button>
             ) : (
@@ -205,8 +198,7 @@ export default function Navbar() {
                     textWrap: 'nowrap',
                     backgroundColor: '#FC692D',
                     justifyContent: 'space-between'
-                  }}
-                >
+                  }}>
                   Criar Evento
                 </Button>
                 <IconButton
@@ -215,8 +207,7 @@ export default function Navbar() {
                   sx={{
                     p: 0,
                     ml: '0.65rem'
-                  }}
-                >
+                  }}>
                   <Avatar
                     alt='Sharp'
                     src='/static/images/avatar/2.jpg'
@@ -240,16 +231,14 @@ export default function Navbar() {
               onClose={handleCloseUserMenu}
               sx={{
                 mt: '55px'
-              }}
-            >
+              }}>
               <MenuItem>
                 <ThemeToggle />
               </MenuItem>
               {settings.map((setting) => (
                 <MenuItem
                   key={setting}
-                  onClick={handleCloseUserMenu}
-                >
+                  onClick={handleCloseUserMenu}>
                   <Typography textAlign='center'>{setting}</Typography>
                 </MenuItem>
               ))}

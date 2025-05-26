@@ -18,7 +18,7 @@ import imagePython from '@/shared/assets/static/images/Python.png'
 import imageReact from '@/shared/assets/static/images/React_Conf_Nordeste.png'
 import imagePHP from '@/shared/assets/static/images/MeetuPHP_com_Rapadura.png'
 
-export function EventCardGroup() {
+export function CardEventSecondaryGroup() {
   return (
     <Grid
       container
@@ -26,8 +26,7 @@ export function EventCardGroup() {
       justifyContent='space-between'
       sx={{
         mb: '5rem'
-      }}
-    >
+      }}>
       <Grid>
         <EventCard
           image={imageReact}
@@ -68,7 +67,7 @@ export function EventCardGroup() {
   )
 }
 
-export default function EventCard(props) {
+export default function CardEventSecondary(props) {
   const { image, title, orgName, orgLogo, description, date, location, link } = props
   return (
     <Card
@@ -81,8 +80,7 @@ export default function EventCard(props) {
           xl: '360px'
         },
         height: 520
-      }}
-    >
+      }}>
       <Box sx={{ position: 'relative' }}>
         <CardMedia
           component='img'
@@ -112,8 +110,7 @@ export default function EventCard(props) {
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap'
             }}
-            gutterBottom
-          >
+            gutterBottom>
             {title}
           </Typography>
         </CardContent>
@@ -123,8 +120,7 @@ export default function EventCard(props) {
           display='flex'
           alignItems='center'
           gap={1}
-          mb={2}
-        >
+          mb={2}>
           <Avatar
             alt={orgName}
             src={orgLogo}
@@ -132,8 +128,7 @@ export default function EventCard(props) {
           />
           <Typography
             variant='body2'
-            color='text.secondary'
-          >
+            color='text.secondary'>
             {orgName}
           </Typography>
         </Box>
@@ -143,20 +138,17 @@ export default function EventCard(props) {
           height='3.5rem'
           fontSize='12.5px'
           color='#64748B'
-          sx={{ pb: '4rem', borderBottom: '1px solid #f2f2f2' }}
-        >
+          sx={{ pb: '4rem', borderBottom: '1px solid #f2f2f2' }}>
           {description}
         </Typography>
 
         <Stack
           spacing={1}
-          mt='15px'
-        >
+          mt='15px'>
           <Box
             display='flex'
             alignItems='center'
-            gap={1}
-          >
+            gap={1}>
             <CalendarTodayIcon
               fontSize='inherit'
               sx={{ color: '#64748B' }}
@@ -164,16 +156,14 @@ export default function EventCard(props) {
             <Typography
               variant='body2'
               fontSize='12px'
-              color='#64748B'
-            >
+              color='#64748B'>
               {date}
             </Typography>
           </Box>
           <Box
             display='flex'
             alignItems='center'
-            gap={1}
-          >
+            gap={1}>
             <PlaceIcon
               fontSize='inherit'
               sx={{ color: '#64748B' }}
@@ -181,16 +171,14 @@ export default function EventCard(props) {
             <Typography
               variant='body2'
               fontSize='12px'
-              color='#64748B'
-            >
+              color='#64748B'>
               {location}
             </Typography>
           </Box>
           <Box
             display='flex'
             alignItems='center'
-            gap={1}
-          >
+            gap={1}>
             <LinkIcon
               fontSize='inherit'
               sx={{ color: '#64748B' }}
@@ -199,8 +187,7 @@ export default function EventCard(props) {
               href={link}
               target='_blank'
               rel='noopener'
-              fontSize='12px'
-            >
+              fontSize='12px'>
               Link / Ingressos
             </Link>
           </Box>
