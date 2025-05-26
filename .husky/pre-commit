@@ -1,3 +1,1 @@
-#!/usr/bin/env bash
-
 npx lint-staged && npx validate-branch-name && npm run check-blocked-files
