@@ -12,7 +12,8 @@ import AppsIcon from '@mui/icons-material/Apps'
 import EventIcon from '@mui/icons-material/Event'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function Searchbar() {
+export default function Searchbar(props) {
+  const { showToggle } = props
   const [view, setView] = useState('calendar')
   const [filter, setFilter] = useState('nearby')
 
@@ -23,16 +24,14 @@ export default function Searchbar() {
         mb: '2rem',
         justifyContent: 'center',
         backgroundColor: '#f9fafb'
-      }}
-    >
+      }}>
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
           width: '100%',
           gap: 2
-        }}
-      >
+        }}>
         <TextField
           placeholder='Buscar eventos...'
           variant='outlined'
@@ -77,45 +76,60 @@ export default function Searchbar() {
             '& fieldset': {
               border: 'none'
             }
-          }}
-        >
+          }}>
           <MenuItem value='nearby'>Mais próximos</MenuItem>
           <MenuItem value='recent'>Mais recentes</MenuItem>
           <MenuItem value='popular'>Populares</MenuItem>
         </Select>
 
-        <ToggleButtonGroup
-          value={view}
-          exclusive
-          onChange={(_, val) => {
-            if (val) setView(val)
-          }}
-        >
-          <ToggleButton
-            value='grid'
-            style={{ backgroundColor: view === 'grid' ? '#FC692D' : '' }}
+        {showToggle && (
+          <ToggleButtonGroup
             sx={{
-              border: 'none',
-              borderRadius: '10px',
-              minWidth: 44,
-              height: 44
+              boxShadow: '0 0 0 1px #e0e0e0',
+              borderRadius: '7px',
+              backgroundColor: 'fff'
             }}
-          >
-            <AppsIcon />
-          </ToggleButton>
-          <ToggleButton
-            value='calendar'
-            style={{ backgroundColor: view === 'calendar' ? '#FC692D' : '' }}
-            sx={{
-              border: 'none',
-              borderRadius: '10px',
-              minWidth: 44,
-              height: 44
-            }}
-          >
-            <EventIcon />
-          </ToggleButton>
-        </ToggleButtonGroup>
+            value={view}
+            exclusive
+            onChange={(_, val) => {
+              if (val) setView(val)
+            }}>
+            <ToggleButton
+              value='grid'
+              style={{
+                'backgroundColor': view === 'grid' ? '#FC692D' : 'transparent',
+                'color': view === 'grid' ? '#fff' : '#5C6B7A',
+                '&:hover': {
+                  backgroundColor: view === 'grid' ? '#FC692D' : '#f5f5f5'
+                }
+              }}
+              sx={{
+                border: 'none',
+                borderRadius: '10',
+                minWidth: 44,
+                height: 44
+              }}>
+              <AppsIcon />
+            </ToggleButton>
+            <ToggleButton
+              value='calendar'
+              style={{
+                'backgroundColor': view === 'calendar' ? '#FC692D' : 'transparent',
+                'color': view === 'calendar' ? '#fff' : '#5C6B7A',
+                '&:hover': {
+                  backgroundColor: view === 'calendar' ? '#FC692D' : '#f5f5f5'
+                }
+              }}
+              sx={{
+                border: 'none',
+                borderRadius: '10',
+                minWidth: 44,
+                height: 44
+              }}>
+              <EventIcon />
+            </ToggleButton>
+          </ToggleButtonGroup>
+        )}
       </Box>
     </Box>
   )
