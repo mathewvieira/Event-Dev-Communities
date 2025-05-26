@@ -10,7 +10,7 @@ export default function Events() {
   return (
     <Box>
       <Container
-        sx={{ paddingTop: '4.5rem' }}
+        sx={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}
         maxWidth='xl'
       >
         <Typography maxWidth='xl'>
