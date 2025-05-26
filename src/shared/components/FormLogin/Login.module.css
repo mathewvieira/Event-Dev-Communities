@@ -17,10 +17,10 @@
 }
 
 .gradientText {
-  background: var(--grad-laranja, linear-gradient(90deg, #f4c542 0%, #fc692d 100%));
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background: var(--grad-laranja, linear-gradient(90deg, #f4c542 0%, #fc692d 100%));
+  background-clip: text;
 }
 
 .formContainer {

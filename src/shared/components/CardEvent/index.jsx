@@ -1,20 +1,33 @@
+import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
+import Link from '@mui/material/Link'
+import Avatar from '@mui/material/Avatar'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
+import CardContent from '@mui/material/CardContent'
 import CardActionArea from '@mui/material/CardActionArea'
+
+import LinkIcon from '@mui/icons-material/Link'
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
+
 import eventReact from '@/shared/assets/static/images/event-react.jpg'
 import logoFrontendCeara from '@/shared/assets/static/images/frontend-ce-logo.jpg'
-import Avatar from '@mui/material/Avatar'
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
-import LinkIcon from '@mui/icons-material/Link'
-import Link from '@mui/material/Link'
 
 export default function CardEvent() {
   return (
-    <Card sx={{ maxWidth: 450, borderRadius: 2 }}>
+    <Card
+      sx={{
+        maxWidth: {
+          xs: '100%',
+          sm: '100%',
+          md: '32%'
+        },
+        borderRadius: 2,
+        width: '100%',
+        boxSizing: 'border-box'
+      }}
+    >
       <CardActionArea>
         <Box sx={{ position: 'relative', height: 300 }}>
           <CardMedia
@@ -25,19 +38,18 @@ export default function CardEvent() {
           />
           <Box
             sx={{
-              position: 'absolute',
+              px: 2,
               top: 0,
               left: 0,
               width: '100%',
-              height: '100%',
-              bgcolor: 'rgba(0, 0, 0, 0.2)', // overlay escuro
               color: '#fff',
+              height: '100%',
               display: 'flex',
+              textAlign: 'center',
+              position: 'absolute',
               alignItems: 'flex-end',
               justifyContent: 'left',
-              textAlign: 'center',
-
-              px: 2
+              bgcolor: 'rgba(0, 0, 0, 0.2)'
             }}
           >
             <Typography
@@ -53,7 +65,7 @@ export default function CardEvent() {
         <CardContent>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
             <Avatar
-              alt='Remy Sharp'
+              alt='Logo Front-End CE'
               src={logoFrontendCeara}
             />
             <Typography

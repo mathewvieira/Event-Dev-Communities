@@ -1,15 +1,16 @@
+import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 
 import HeroSection from '@/shared/components/HeroSection'
 import CallToAction from '@/shared/components/CallToAction'
 import SectionHeader from '@/shared/components/SectionHeader'
-
+import EventViewToggle from '@/shared/components/EventViewToggle'
 import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
 import FeaturedCardGroup from '@/shared/components/FeaturedCard/FeaturedCardGroup'
 
 export default function Home() {
   return (
-    <>
+    <Box sx={{ paddingTop: '4.5rem' }}>
       <HeroSection />
       <Container maxWidth='xl'>
         <SectionHeader
@@ -18,8 +19,8 @@ export default function Home() {
           link='/eventos'
           linkText='Ver todos os eventos'
         />
+        <EventViewToggle />
         <CardEventGroup />
-
         <SectionHeader
           title='Comunidades em Destaque'
           subtitle='Conheça as comunidades dev mais ativas da plataforma'
@@ -34,6 +35,6 @@ export default function Home() {
         buttonText='Começar agora'
         link='/eventos'
       />
-    </>
+    </Box>
   )
 }

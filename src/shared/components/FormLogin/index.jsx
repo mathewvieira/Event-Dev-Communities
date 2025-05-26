@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography'
 import styles from './Login.module.css'
 import Button from '@mui/material/Button'
 
-export default function Login() {
+export default function FormLogin() {
   return (
     <Box
       className={styles.container}
@@ -58,7 +58,7 @@ export default function Login() {
           Senha
         </Typography>
         <TextField
-          id='outlined-password-input'
+          id='password'
           placeholder='********'
           name='password'
           type='password'

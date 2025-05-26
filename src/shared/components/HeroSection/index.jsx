@@ -36,7 +36,8 @@ export default function HeroSection() {
                 textAlign: { xs: 'left', md: 'left' }
               }}
             >
-              Conecte-se com as melhores comunidades dev
+              Conecte-se <br />
+              com as melhores comunidades dev
             </Typography>
 
             <Typography
@@ -55,24 +56,34 @@ export default function HeroSection() {
               sx={{
                 gap: '16px',
                 display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                width: { xs: '100%', md: 'auto' },
                 paddingBottom: { xs: '5rem', md: '1rem' },
                 justifyContent: { xs: 'center', md: 'start' }
               }}
             >
               <Button
+                href='/eventos'
                 variant='contained'
                 color='primary'
                 size='large'
+                sx={{
+                  height: { xs: 60, md: 'auto' },
+                  width: { xs: '100%', md: 'auto' }
+                }}
               >
                 Explorar Eventos
               </Button>
 
               <Button
+                href='/login'
                 variant='contained'
                 color='secondary'
                 size='large'
                 sx={{
-                  fontWeight: '700'
+                  fontWeight: '700',
+                  height: { xs: 60, md: 'auto' },
+                  width: { xs: '100%', md: 'auto' }
                 }}
               >
                 Criar Eventos

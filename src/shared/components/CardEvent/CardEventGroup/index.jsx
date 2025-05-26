@@ -7,9 +7,11 @@ export default function CardEventGroup() {
     <Box
       sx={{
         display: 'flex',
-        justifyContent: 'space-between',
         flexWrap: 'wrap',
-        marginTop: '1.5rem'
+        rowGap: '1rem',
+        columnGap: '1rem',
+        marginTop: '1.5rem',
+        justifyContent: { sm: 'space-evenly', md: 'space-between' }
       }}
     >
       <CardEvent />

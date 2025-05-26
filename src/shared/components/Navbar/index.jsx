@@ -24,7 +24,9 @@ const settings = ['Logout']
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null)
   const [anchorElUser, setAnchorElUser] = useState(null)
-  const [currentUser, setCurrentUser] = useState(null)
+
+  // const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser] = useState(null)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -43,19 +45,29 @@ export default function Navbar() {
   }
 
   const handleLoginClick = () => {
+    /* Criar lógica de login
     setCurrentUser('usuarioLogado')
     window.location.change()
+    */
   }
 
   const handleCreateEvent = () => {
+    /* Criar lógica de login
     setCurrentUser('event')
     window.location.change()
+    */
   }
 
   return (
     <AppBar
-      position='static'
+      position='fixed'
       color='transparent'
+      sx={{
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
+      }}
     >
       <Container
         maxWidth='xl'
@@ -100,10 +112,7 @@ export default function Navbar() {
               aria-controls={anchorElNav ? 'long-menu' : undefined}
               onClick={handleOpenNavMenu}
               sx={{
-                color: 'text.primary',
-                borderWidth: '1px',
-                borderStyle: 'solid',
-                borderColor: 'secondary.dark'
+                color: 'text.primary'
               }}
             >
               <MenuIcon />
@@ -158,7 +167,11 @@ export default function Navbar() {
                 href={`/${page.toLowerCase()}`}
                 onClick={handleCloseNavMenu}
                 sx={{
-                  alignItems: 'normal'
+                  'alignItems': 'normal',
+                  'fontWeight': '700',
+                  '&:hover': {
+                    color: '#FC692D'
+                  }
                 }}
               >
                 {page}
@@ -177,11 +190,8 @@ export default function Navbar() {
             {!currentUser ? (
               <Button
                 href='/login'
+                variant='contained'
                 onClick={handleLoginClick}
-                sx={{
-                  color: 'white',
-                  backgroundColor: '#FC692D'
-                }}
               >
                 Entrar
               </Button>
