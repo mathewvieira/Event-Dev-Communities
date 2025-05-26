@@ -7,12 +7,12 @@ export default function SectionHeader(props) {
 
   return (
     <Box
-      my={'3rem'}
       sx={{
-        display: { sm: 'block', md: 'flex' },
-        textAlign: { xs: 'center', sm: 'center', md: 'left' },
+        mt: '3rem',
+        alignItems: 'center',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        display: { sm: 'block', md: 'flex' },
+        textAlign: { xs: 'center', sm: 'center', md: 'left' }
       }}
     >
       <Box>
@@ -28,6 +28,7 @@ export default function SectionHeader(props) {
         <Link
           href={link}
           variant='body2'
+          underline='hover'
         >
           {linkText}
         </Link>

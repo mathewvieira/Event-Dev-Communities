@@ -2,19 +2,19 @@ import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
 import Divider from '@mui/material/Divider'
-import Container from '@mui/material/Container'
+import GitHub from '@mui/icons-material/GitHub'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import GitHub from '@mui/icons-material/GitHub'
 import LinkedIn from '@mui/icons-material/LinkedIn'
 import Instagram from '@mui/icons-material/Instagram'
+
 import logo from '@/shared/assets/static/images/event-dev.png'
 import logoGeracao from '@/shared/assets/static/images/geracao-tech.png'
 import logoDigital from '@/shared/assets/static/images/digital-college.png'
 
 export default function Footer() {
   return (
-    <Box sx={{ padding: '2rem', width: '100%', marginTop: '2rem' }}>
+    <Box sx={{ padding: '2rem', width: '100%', borderTop: '1px solid #e0e0e0' }}>
       <Box sx={{ margin: '0 auto' }}>
         <Box
           sx={{
@@ -34,10 +34,12 @@ export default function Footer() {
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 4 }}>
               <Box sx={{ flex: 1, maxWidth: '400px' }}>
                 <Box sx={{ mb: 2 }}>
-                  <img
-                    src={logo}
-                    alt='Logo EventDev'
-                  />
+                  <Link href='/'>
+                    <img
+                      src={logo}
+                      alt='Logo EventDev'
+                    />
+                  </Link>
                 </Box>
                 <Typography
                   variant='body2'

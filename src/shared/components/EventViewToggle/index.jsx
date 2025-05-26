@@ -1,24 +1,27 @@
-import React, { useState } from 'react'
-import Box from '@mui/material/Box'
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import ToggleButton from '@mui/material/ToggleButton'
+import { useState } from 'react'
 
-export default function EventViewToogle() {
+import Box from '@mui/material/Box'
+import ToggleButton from '@mui/material/ToggleButton'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+
+export default function EventViewToggle() {
   const [eventType, setEventType] = useState('proximos')
+
   return (
     <Box>
       <Box
         sx={{
-          backgroundColor: '#f4f6f8',
-          borderRadius: '8px',
           p: '6px',
-          display: 'inline-flex'
+          mt: '0.5rem',
+          borderRadius: '8px',
+          display: 'inline-flex',
+          backgroundColor: '#f4f6f8'
         }}
       >
         <ToggleButtonGroup
           value={eventType}
           exclusive
-          onChange={(e, val) => val && setEventType(val)}
+          onChange={(_, val) => val && setEventType(val)}
           sx={{ gap: 1 }}
         >
           {['proximos', 'online'].map((type) => (
@@ -26,21 +29,21 @@ export default function EventViewToogle() {
               key={type}
               value={type}
               sx={{
-                'textTransform': 'none',
-                'px': 3,
-                'py': 1,
-                'border': 'none',
-                'borderRadius': '8px',
-                'fontWeight': eventType === type ? 700 : 500,
-                'color': eventType === type ? '#111827' : '#6b7280',
-                'backgroundColor': eventType === type ? '#fff' : 'transparent',
+                '&': {
+                  py: 1,
+                  px: 3,
+                  fontSize: '12px',
+                  border: 'none',
+                  textWrap: 'nowrap',
+                  borderRadius: '8px',
+                  textTransform: 'none',
+                  fontWeight: eventType === type ? 700 : 500,
+                  color: eventType === type ? '#111827' : '#6b7280',
+                  backgroundColor: eventType === type ? '#fff' : 'transparent'
+                },
                 '&:hover': {
                   backgroundColor: eventType === type ? '#fff' : '#e5e7eb'
                 },
-<<<<<<< HEAD
-=======
-                // Força que ao focar o botão selecionado o fundo fique branco também
->>>>>>> 17ffced (feat(toggle): add filter for upcoming and online events)
                 '&.Mui-selected, &.Mui-selected:hover': {
                   backgroundColor: '#fff'
                 }
