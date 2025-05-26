@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
 import Events from '@/pages/Events'
+import CreateEvent from '@/pages/CreateEvent'
 import Communities from '@/pages/Communities'
+import CommunityRegister from '@/pages/CommunityRegister'
+
 import Navbar from '@/shared/components/Navbar'
 import Footer from '@/shared/components/Footer'
-import CommunityRegister from './pages/CommunityRegister'
 
 export default function App() {
   return (
@@ -33,6 +35,10 @@ export default function App() {
         <Route
           path='/cadastro-comunidade'
           element={<CommunityRegister />}
+        />
+        <Route
+          path='/criacao-de-eventos'
+          element={<CreateEvent />}
         />
       </Routes>
 
