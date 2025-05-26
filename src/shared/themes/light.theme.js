@@ -203,8 +203,19 @@ export const lightTheme = {
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: '6.5px',
-          boxShadow: 'unset'
+          '&': {
+            borderRadius: '6.5px',
+            boxShadow: 'unset'
+          },
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.5)'
+          },
+          '& .MuiTouchRipple-root': {
+            color: 'rgba(0, 0, 0, 0.2)'
+          },
+          '& .MuiTouchRipple-child': {
+            backgroundColor: 'rgba(0, 0, 0, 0.1)'
+          }
         }
       }
     },
