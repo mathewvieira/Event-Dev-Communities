@@ -1,6 +1,6 @@
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
-import SearchBar from '@/shared/components/SearchBar'
+import Searchbar from '@/shared/components/Searchbar'
 import EventTypeSelector from '@/shared/components/EventType'
 
 export default function Events() {
@@ -13,7 +13,7 @@ export default function Events() {
         </main>
       </Typography>
 
-      <SearchBar />
+      <Searchbar />
       <EventTypeSelector />
     </Container>
   )
