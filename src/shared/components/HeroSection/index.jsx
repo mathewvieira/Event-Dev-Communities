@@ -76,7 +76,7 @@ export default function HeroSection() {
               </Button>
 
               <Button
-                href='/login'
+                href='/criacao-de-eventos'
                 variant='contained'
                 color='secondary'
                 size='large'
