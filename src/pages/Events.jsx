@@ -5,12 +5,15 @@ import EventTypeSelector from '@/shared/components/EventType'
 import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
 import Box from '@mui/material/Box'
 import React from 'react'
+import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
+import Box from '@mui/material/Box'
+import React from 'react'
 
 export default function Events() {
   return (
     <Box>
       <Container
-        sx={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}
+        sx={{ paddingTop: '4.5rem' }}
         maxWidth='xl'
       >
         <Typography maxWidth='xl'>
@@ -20,7 +23,7 @@ export default function Events() {
           </main>
         </Typography>
 
-        <Searchbar />
+        <Searchbar showToggle={true} />
 
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Box>
