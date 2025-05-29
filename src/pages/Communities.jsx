@@ -3,8 +3,12 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Searchbar from '@/shared/components/Searchbar'
+// import { useLocation } from 'react-router-dom'
 
 export default function Communities() {
+  // const location = useLocation();
+  // const showToggle= location.pathname === '/events';
+
   return (
     <Box>
       <Container
@@ -18,10 +22,8 @@ export default function Communities() {
           </main>
         </Typography>
 
-        <Searchbar />
-
+        <Searchbar showToggle={false} />
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <FeaturedCardGroup />
           <FeaturedCardGroup />
         </Box>
       </Container>

@@ -20,7 +20,7 @@ export default function Events() {
           </main>
         </Typography>
 
-        <Searchbar />
+        <Searchbar showToggle={true} />
 
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Box>

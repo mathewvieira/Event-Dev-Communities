@@ -13,7 +13,8 @@ import EventIcon from '@mui/icons-material/Event'
 import SearchIcon from '@mui/icons-material/Search'
 import Container from '@mui/material/Container'
 
-export default function Searchbar() {
+export default function Searchbar(props) {
+  const { showToggle } = props
   const [view, setView] = useState('calendar')
   const [filter, setFilter] = useState('nearby')
 
@@ -87,38 +88,40 @@ export default function Searchbar() {
             <MenuItem value='popular'>Populares</MenuItem>
           </Select>
 
-          <ToggleButtonGroup
-            value={view}
-            exclusive
-            onChange={(_, val) => {
-              if (val) setView(val)
-            }}
-          >
-            <ToggleButton
-              value='grid'
-              style={{ backgroundColor: view === 'grid' ? '#FC692D' : '' }}
-              sx={{
-                border: 'none',
-                borderRadius: '10px',
-                minWidth: 44,
-                height: 44
+          {showToggle && (
+            <ToggleButtonGroup
+              value={view}
+              exclusive
+              onChange={(_, val) => {
+                if (val) setView(val)
               }}
             >
-              <AppsIcon />
-            </ToggleButton>
-            <ToggleButton
-              value='calendar'
-              style={{ backgroundColor: view === 'calendar' ? '#FC692D' : '' }}
-              sx={{
-                border: 'none',
-                borderRadius: '10px',
-                minWidth: 44,
-                height: 44
-              }}
-            >
-              <EventIcon />
-            </ToggleButton>
-          </ToggleButtonGroup>
+              <ToggleButton
+                value='grid'
+                style={{ backgroundColor: view === 'grid' ? '#FC692D' : '' }}
+                sx={{
+                  border: 'none',
+                  borderRadius: '10px',
+                  minWidth: 44,
+                  height: 44
+                }}
+              >
+                <AppsIcon />
+              </ToggleButton>
+              <ToggleButton
+                value='calendar'
+                style={{ backgroundColor: view === 'calendar' ? '#FC692D' : '' }}
+                sx={{
+                  border: 'none',
+                  borderRadius: '10px',
+                  minWidth: 44,
+                  height: 44
+                }}
+              >
+                <EventIcon />
+              </ToggleButton>
+            </ToggleButtonGroup>
+          )}
         </Box>
       </Box>
     </Container>
