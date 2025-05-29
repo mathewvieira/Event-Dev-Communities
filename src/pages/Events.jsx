@@ -5,6 +5,9 @@ import EventTypeSelector from '@/shared/components/EventType'
 import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
 import Box from '@mui/material/Box'
 import React from 'react'
+import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
+import Box from '@mui/material/Box'
+import React from 'react'
 
 export default function Events() {
   return (
