@@ -11,8 +11,7 @@ export default function Events() {
     <Box>
       <Container
         sx={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}
-        maxWidth='xl'
-      >
+        maxWidth='xl'>
         <Typography maxWidth='xl'>
           <main className='px-6 py-10 max-w-7xl mx-auto'>
             <h1 className='text-3xl font-semibold mb-2'>Eventos</h1>
@@ -20,7 +19,7 @@ export default function Events() {
           </main>
         </Typography>
 
-        <Searchbar />
+        <Searchbar showToggle={true} />
 
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Box>
