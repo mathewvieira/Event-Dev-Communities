@@ -53,7 +53,8 @@ export default function PageNotFound() {
         </Box>
       </Box>
       <Button
-        path='/'
+        component={Link}
+        to='/'
         variant='contained'
         color='primary'
         sx={{ position: 'relative', left: '6.5rem', mt: '1rem' }}>
