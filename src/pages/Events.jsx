@@ -11,14 +11,31 @@ export default function Events() {
     <Box>
       <Container
         sx={{ paddingTop: '4.5rem', paddingBottom: '4.5rem' }}
-        maxWidth='xl'
-      >
-        <Typography maxWidth='xl'>
+        maxWidth='xl'>
+        <Typography
+          component='div'
+          maxWidth='xl'>
+          <Typography
+            variant='h3'
+            component='h1'
+            gutterBottom
+            sx={{ fontWeight: 'semibold' }}>
+            Eventos
+          </Typography>
+
+          <Typography
+            variant='body1'
+            color='text.secondary'
+            paragraph>
+            Encontre eventos de tecnologia em todo o Nordeste, presencial e online. Filtre por tipo e data.
+          </Typography>
+        </Typography>
+        {/* <Typography maxWidth='xl'>
           <main className='px-6 py-10 max-w-7xl mx-auto'>
             <h1 className='text-3xl font-semibold mb-2'>Eventos</h1>
             <p className='text-gray-500 mb-6'>Encontre eventos de tecnologia em todo o Nordeste, presencial e online. Filtre por tipo e data.</p>
           </main>
-        </Typography>
+        </Typography> */}
 
         <Searchbar />
 
