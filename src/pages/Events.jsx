@@ -30,15 +30,7 @@ export default function Events() {
             Encontre eventos de tecnologia em todo o Nordeste, presencial e online. Filtre por tipo e data.
           </Typography>
         </Typography>
-        {/* <Typography maxWidth='xl'>
-          <main className='px-6 py-10 max-w-7xl mx-auto'>
-            <h1 className='text-3xl font-semibold mb-2'>Eventos</h1>
-            <p className='text-gray-500 mb-6'>Encontre eventos de tecnologia em todo o Nordeste, presencial e online. Filtre por tipo e data.</p>
-          </main>
-        </Typography> */}
-
         <Searchbar />
-
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Box>
             <EventTypeSelector />
