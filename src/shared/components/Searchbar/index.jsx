@@ -23,16 +23,14 @@ export default function Searchbar() {
         mb: '2rem',
         justifyContent: 'center',
         backgroundColor: '#f9fafb'
-      }}
-    >
+      }}>
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
           width: '100%',
           gap: 2
-        }}
-      >
+        }}>
         <TextField
           placeholder='Buscar eventos...'
           variant='outlined'
@@ -77,8 +75,7 @@ export default function Searchbar() {
             '& fieldset': {
               border: 'none'
             }
-          }}
-        >
+          }}>
           <MenuItem value='nearby'>Mais próximos</MenuItem>
           <MenuItem value='recent'>Mais recentes</MenuItem>
           <MenuItem value='popular'>Populares</MenuItem>
@@ -90,30 +87,40 @@ export default function Searchbar() {
           onChange={(_, val) => {
             if (val) setView(val)
           }}
-        >
+          sx={{
+            border: '1px solid #E2E7F0',
+            borderRadius: '12px'
+          }}>
           <ToggleButton
             value='grid'
-            style={{ backgroundColor: view === 'grid' ? '#FC692D' : '' }}
+            selected={view === 'grid'}
             sx={{
-              border: 'none',
-              borderRadius: '10px',
-              minWidth: 44,
-              height: 44
-            }}
-          >
-            <AppsIcon />
+              'backgroundColor': view === 'grid' ? '#FC692D !important' : '#ffffff',
+              'border': 'none',
+              'borderRadius': '10px',
+              'minWidth': 44,
+              'height': 44,
+              '&:hover': {
+                backgroundColor: view === 'grid' ? '#FC692D !important' : '#f9fafb'
+              }
+            }}>
+            <AppsIcon sx={{ color: view === 'grid' ? '#ffffff' : '#64748B' }} />
           </ToggleButton>
+
           <ToggleButton
             value='calendar'
-            style={{ backgroundColor: view === 'calendar' ? '#FC692D' : '' }}
+            selected={view === 'calendar'}
             sx={{
-              border: 'none',
-              borderRadius: '10px',
-              minWidth: 44,
-              height: 44
-            }}
-          >
-            <EventIcon />
+              'backgroundColor': view === 'calendar' ? '#FC692D !important' : '#ffffff',
+              'border': 'none',
+              'borderRadius': '10px',
+              'minWidth': 44,
+              'height': 44,
+              '&:hover': {
+                backgroundColor: view === 'calendar' ? '#FC692D !important' : '#f9fafb'
+              }
+            }}>
+            <EventIcon sx={{ color: view === 'calendar' ? '#ffffff' : '#64748B' }} />
           </ToggleButton>
         </ToggleButtonGroup>
       </Box>
