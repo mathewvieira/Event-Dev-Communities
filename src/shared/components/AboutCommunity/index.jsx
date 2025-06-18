@@ -2,14 +2,13 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
 import LanguageIcon from '@mui/icons-material/Language'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import InstagramIcon from '@mui/icons-material/Instagram'
 
 export default function AboutCommunity() {
   return (
-    <Box sx={{ p: 4, borderRadius: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
+    <Box sx={{ borderRadius: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
       <Typography
         variant='h5'
         gutterBottom
@@ -30,11 +29,17 @@ export default function AboutCommunity() {
         sx={{ mt: 4 }}>
         Canais oficiais
       </Typography>
-      <Stack spacing={1}>
-        <Stack
-          direction='row'
-          spacing={1}
-          alignItems='center'>
+      <Box
+        spacing={1}
+        sx={{ display: 'flex', flexDirection: 'column', gap: 1, flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '24px 1fr',
+            alignItems: 'center',
+            columnGap: 2,
+            wordBreak: 'break-word'
+          }}>
           <LanguageIcon
             fontSize='small'
             color='action'
@@ -43,14 +48,23 @@ export default function AboutCommunity() {
             href='https://housejs.dev/'
             target='_blank'
             rel='noopener'
-            underline='hover'>
+            underline='hover'
+            sx={{
+              wordBreak: 'break-word',
+              maxWidth: 'calc(100% - 24px)',
+              whiteSpace: 'normal'
+            }}>
             https://housejs.dev/
           </Link>
-        </Stack>
-        <Stack
-          direction='row'
-          spacing={1}
-          alignItems='center'>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '24px 1fr',
+            columnGap: 2,
+            wordBreak: 'break-word'
+          }}>
           <GitHubIcon
             fontSize='small'
             color='action'
@@ -59,14 +73,24 @@ export default function AboutCommunity() {
             href='https://www.github.com/housejs'
             target='_blank'
             rel='noopener'
-            underline='hover'>
+            underline='hover'
+            sx={{
+              wordBreak: 'break-word',
+              maxWidth: 'calc(100% - 24px)',
+              whiteSpace: 'normal'
+            }}>
             https://www.github.com/housejs
           </Link>
-        </Stack>
-        <Stack
-          direction='row'
-          spacing={1}
-          alignItems='center'>
+        </Box>
+
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '24px 1fr',
+            alignItems: 'center',
+            columnGap: 2,
+            wordBreak: 'break-word'
+          }}>
           <InstagramIcon
             fontSize='small'
             color='action'
@@ -75,11 +99,16 @@ export default function AboutCommunity() {
             href='https://www.instagram.com/comunidadehousejs'
             target='_blank'
             rel='noopener'
-            underline='hover'>
+            underline='hover'
+            sx={{
+              wordBreak: 'break-word',
+              maxWidth: 'calc(100% - 24px)',
+              whiteSpace: 'normal'
+            }}>
             https://www.instagram.com/comunidadehousejs
           </Link>
-        </Stack>
-      </Stack>
+        </Box>
+      </Box>
     </Box>
   )
 }

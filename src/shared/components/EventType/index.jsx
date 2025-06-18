@@ -8,21 +8,18 @@ export default function EventTypeSelector() {
 
   return (
     <Box>
-      {/* Botões */}
       <Box
         sx={{
           p: '6px',
           borderRadius: '8px',
           display: 'inline-flex',
           backgroundColor: '#F1F5F9 '
-        }}
-      >
+        }}>
         <ToggleButtonGroup
           value={eventType}
           exclusive
           onChange={(e, val) => val && setEventType(val)}
-          sx={{ gap: 1 }}
-        >
+          sx={{ gap: 1 }}>
           {['todos', 'online', 'presencial'].map((type) => (
             <ToggleButton
               key={type}
@@ -44,8 +41,7 @@ export default function EventTypeSelector() {
                 '&:hover': {
                   backgroundColor: eventType === type ? '#fff' : '#e2e8f0'
                 }
-              }}
-            >
+              }}>
               {type === 'todos' && 'Todos'}
               {type === 'online' && 'Online'}
               {type === 'presencial' && 'Presencial'}

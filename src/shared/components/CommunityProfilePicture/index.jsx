@@ -14,7 +14,13 @@ export default function CommunityProfilePicture() {
     <Stack
       direction='row'
       spacing={2}
-      alignItems='center'>
+      alignItems='center'
+      sx={{
+        py: 2,
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
+        alignItems: { xs: 'center', sm: 'flex-start' }
+      }}>
       <Avatar
         variant='square'
         alt='House.js'
@@ -23,16 +29,22 @@ export default function CommunityProfilePicture() {
       />
 
       <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 1 }}>
-        <Typography variant='h1'>House js</Typography>
+        <Typography
+          variant='h1'
+          sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
+          House js
+        </Typography>
         <Typography
           variant='body2'
-          color='text.secondary'>
+          color='text.secondary'
+          sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
           Comunidade Javascript em Fortaleza
         </Typography>
         <Stack
           direction='row'
           spacing={1}
-          mt={1}>
+          mt={1}
+          sx={{ justifyContent: { xs: 'center', sm: 'flex-start' } }}>
           <Link
             href='https://github.com/housejs'
             target='_blank'

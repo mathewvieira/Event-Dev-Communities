@@ -9,6 +9,7 @@ import CommunityRegister from '@/pages/CommunityRegister'
 
 import Navbar from '@/shared/components/Navbar'
 import Footer from '@/shared/components/Footer'
+import CommunityProfile from './pages/CommunityProfile'
 
 export default function App() {
   return (
@@ -39,6 +40,10 @@ export default function App() {
         <Route
           path='/criacao-de-eventos'
           element={<CreateEvent />}
+        />
+        <Route
+          path='/perfil-comunidade/:communityId'
+          element={<CommunityProfile />}
         />
       </Routes>
 

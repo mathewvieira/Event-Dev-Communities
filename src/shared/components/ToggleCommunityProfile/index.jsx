@@ -1,14 +1,9 @@
-import { useState } from 'react'
-
 import Box from '@mui/material/Box'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-export default function ToogleCommunityProfile() {
-  const [eventType, setEventType] = useState('eventos')
-
+export default function ToogleCommunityProfile({ value, onChange }) {
   const options = ['eventos', 'sobre']
-
   return (
     <Box>
       <Box
@@ -20,9 +15,9 @@ export default function ToogleCommunityProfile() {
           backgroundColor: '#f4f6f8'
         }}>
         <ToggleButtonGroup
-          value={eventType}
+          value={value}
           exclusive
-          onChange={(_, val) => val && setEventType(val)}
+          onChange={(_, val) => val && onChange(val)}
           sx={{ gap: 1 }}>
           {options.map((type) => (
             <ToggleButton
@@ -37,12 +32,12 @@ export default function ToogleCommunityProfile() {
                   textWrap: 'nowrap',
                   borderRadius: '8px',
                   textTransform: 'none',
-                  fontWeight: eventType === type ? 700 : 500,
-                  color: eventType === type ? '#111827' : '#6b7280',
-                  backgroundColor: eventType === type ? '#fff' : 'transparent'
+                  fontWeight: value === type ? 700 : 500,
+                  color: value === type ? '#111827' : '#6b7280',
+                  backgroundColor: value === type ? '#fff' : 'transparent'
                 },
                 '&:hover': {
-                  backgroundColor: eventType === type ? '#fff' : '#e5e7eb'
+                  backgroundColor: value === type ? '#fff' : '#e5e7eb'
                 },
                 '&.Mui-selected, &.Mui-selected:hover': {
                   backgroundColor: '#fff'
