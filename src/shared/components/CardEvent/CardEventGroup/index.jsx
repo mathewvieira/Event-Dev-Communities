@@ -10,9 +10,16 @@ export default function CardEventGroup() {
         flexWrap: 'wrap',
         rowGap: '1rem',
         columnGap: '1rem',
-        justifyContent: { sm: 'space-evenly', md: 'space-between' }
-      }}
-    >
+        marginBottom: '2rem',
+        flexDirection: { xs: 'row', lg: 'row' },
+        justifyContent: {
+          xs: 'center',
+          sm: 'center',
+          md: 'space-around',
+          lg: 'space-between'
+        },
+        gap: '1rem'
+      }}>
       <CardEvent />
       <CardEvent />
       <CardEvent />

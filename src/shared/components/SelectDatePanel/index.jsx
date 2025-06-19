@@ -5,8 +5,7 @@ import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import EventAvailableIcon from '@mui/icons-material/EventAvailable'
 import EventCountBadge from '@/shared/components/EventCountBadge'
-// futuramente você criará este componente:
-// import EventsList from './EventsList' // opcional: apenas como placeholder
+import CardEventHorizontal from '../CardEvent/CardEventHorizontal'
 
 export default function SelectedDatePanel({ selectedDate, eventsCount }) {
   const formatDate = (dateStr) => {
@@ -40,7 +39,11 @@ export default function SelectedDatePanel({ selectedDate, eventsCount }) {
 
       <Box
         flexGrow={1}
-        mt={4}>
+        mt={4}
+        display='flex'
+        flexDirection='column'
+        justifyContent='center'
+        alignItems='center'>
         {eventsCount === 0 ? (
           <Stack
             alignItems='center'
@@ -61,12 +64,16 @@ export default function SelectedDatePanel({ selectedDate, eventsCount }) {
             </Typography>
           </Stack>
         ) : (
-          //<EventsList selectedDate={selectedDate} />
-          <Typography
-            variant='body2'
-            color='text.secondary'>
-            Aqui serão exibidos os eventos do dia selecionado.
-          </Typography>
+          <>
+            <CardEventHorizontal selectedDate={selectedDate} />
+            <Box mt={2} />
+            <CardEventHorizontal selectedDate={selectedDate} />
+          </>
+          // <Typography
+          //   variant='body2'
+          //   color='text.secondary'>
+          //   Aqui serão exibidos os eventos do dia selecionado.
+          // </Typography>
         )}
       </Box>
     </Paper>
