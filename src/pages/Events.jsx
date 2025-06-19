@@ -4,9 +4,12 @@ import Searchbar from '@/shared/components/Searchbar'
 import EventTypeSelector from '@/shared/components/EventType'
 import CardEventGroup from '@/shared/components/CardEvent/CardEventGroup'
 import Box from '@mui/material/Box'
-import React from 'react'
+import React, { useState } from 'react'
+import CalendarView from '@/shared/components/CalendarView'
+import Stack from '@mui/material/Stack'
 
 export default function Events() {
+  const [view, setView] = useState('calendar')
   return (
     <Box>
       <Container
@@ -26,19 +29,33 @@ export default function Events() {
           <Typography
             variant='body1'
             color='text.secondary'
-            paragraph>
+            sx={{ marginBottom: '1rem' }}>
             Encontre eventos de tecnologia em todo o Nordeste, presencial e online. Filtre por tipo e data.
           </Typography>
         </Typography>
-        <Searchbar />
+        <Searchbar
+          view={view}
+          setView={setView}
+        />
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Box>
-            <EventTypeSelector />
-          </Box>
-          <Box>
-            <CardEventGroup />
-            <CardEventGroup />
-          </Box>
+          <Stack
+            direction={{ xs: 'column', md: 'row' }}
+            spacing={2}
+            sx={{ width: '100%' }}>
+            <Box>
+              <EventTypeSelector />
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+              {view === 'calendar' ? (
+                <CalendarView />
+              ) : (
+                <>
+                  <CardEventGroup />
+                  <CardEventGroup />
+                </>
+              )}
+            </Box>
+          </Stack>
         </Box>
       </Container>
     </Box>

@@ -12,8 +12,7 @@ import AppsIcon from '@mui/icons-material/Apps'
 import EventIcon from '@mui/icons-material/Event'
 import SearchIcon from '@mui/icons-material/Search'
 
-export default function Searchbar() {
-  const [view, setView] = useState('calendar')
+export default function Searchbar({ view, setView }) {
   const [filter, setFilter] = useState('nearby')
 
   return (
