@@ -7,9 +7,25 @@ import Box from '@mui/material/Box'
 import React, { useState } from 'react'
 import CalendarView from '@/shared/components/CalendarView'
 import Stack from '@mui/material/Stack'
+import Pagination from '@mui/material/Pagination'
 
 export default function Events() {
-  const [view, setView] = useState('calendar')
+  const [view, setView] = useState('grid')
+
+  const [page, setPage] = useState(1)
+
+  // cada grupo é uma lista de eventos (aqui só strings para ilustrar)
+  const groups = [['Evento 1', 'Evento 2'], ['Evento 3', 'Evento 4'], ['Evento 5', 'Evento 6'], ['Evento 7', 'Evento 8'], ['Evento 9']]
+
+  const groupsPerPage = 2
+  const pageCount = Math.ceil(groups.length / groupsPerPage)
+
+  const groupsToShow = groups.slice((page - 1) * groupsPerPage, page * groupsPerPage)
+
+  const handleChangePage = (_event, value) => {
+    setPage(value)
+  }
+
   return (
     <Box>
       <Container
@@ -36,10 +52,11 @@ export default function Events() {
         <Searchbar
           view={view}
           setView={setView}
+          placeholderText={'Buscar eventos...'}
         />
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Stack
-            direction={{ xs: 'column', md: 'row' }}
+            direction={{ xs: 'column', md: 'column', lg: 'row' }}
             spacing={2}
             sx={{ width: '100%' }}>
             <Box>
@@ -50,8 +67,24 @@ export default function Events() {
                 <CalendarView />
               ) : (
                 <>
-                  <CardEventGroup />
-                  <CardEventGroup />
+                  {groupsToShow.map((groupEvents, index) => (
+                    <CardEventGroup
+                      key={index}
+                      events={groupEvents}
+                    />
+                  ))}
+
+                  {pageCount > 1 && (
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+                      <Pagination
+                        count={pageCount}
+                        page={page}
+                        onChange={handleChangePage}
+                      />
+                    </Box>
+                  )}
+                  {/* <CardEventGroup />
+                  <CardEventGroup /> */}
                 </>
               )}
             </Box>
