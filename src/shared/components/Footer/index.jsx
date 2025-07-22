@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton'
 import LinkedIn from '@mui/icons-material/LinkedIn'
 import Instagram from '@mui/icons-material/Instagram'
 
-import logo from '@/shared/assets/static/images/event-dev.png'
+import logo from '@/shared/assets/static/images/logo.png'
 import logoGeracao from '@/shared/assets/static/images/geracao-tech.png'
 import logoDigital from '@/shared/assets/static/images/digital-college.png'
 
@@ -35,6 +35,7 @@ export default function Footer() {
                   <Link href='/'>
                     <img
                       src={logo}
+                      width={180}
                       alt='Logo EventDev'
                     />
                   </Link>
@@ -137,21 +138,24 @@ export default function Footer() {
           <Grid>
             <Box>
               <IconButton
-                href='https://instagram.com'
+                href='https://www.instagram.com/eventdevcommunities'
                 target='_blank'
-                size='small'>
+                size='small'
+                rel='noopener noreferrer'>
                 <Instagram />
               </IconButton>
               <IconButton
-                href='https://github.com'
+                href='https://github.com/mathewvieira/Event-Dev-Communities'
                 target='_blank'
-                size='small'>
+                size='small'
+                rel='noopener noreferrer'>
                 <GitHub />
               </IconButton>
               <IconButton
                 href='https://linkedin.com'
                 target='_blank'
-                size='small'>
+                size='small'
+                rel='noopener noreferrer'>
                 <LinkedIn />
               </IconButton>
             </Box>

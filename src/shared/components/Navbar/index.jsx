@@ -63,7 +63,7 @@ export default function Navbar() {
       position='fixed'
       color='transparent'
       sx={{
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        backgroundColor: 'white',
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.3)'
@@ -80,13 +80,16 @@ export default function Navbar() {
           <img
             src={logoImage}
             alt='Logo'
-            width={80}
+            width={180}
+            style={{
+              marginTop: '.5rem'
+            }}
           />
         </Link>
 
         <Toolbar
           sx={{
-            paddingRight: '0 !important',
+            paddingX: '0 !important',
             width: {
               sm: '100%'
             }
@@ -108,7 +111,7 @@ export default function Navbar() {
               aria-controls={anchorElNav ? 'long-menu' : undefined}
               onClick={handleOpenNavMenu}
               sx={{
-                color: 'text.primary'
+                color: 'text.main'
               }}>
               <MenuIcon />
             </IconButton>
@@ -136,7 +139,17 @@ export default function Navbar() {
               }}>
               {pages.map((page) => (
                 <MenuItem key={page}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography
+                    sx={{
+                      'textAlign': 'center',
+                      'color': 'text.main',
+                      '&:hover': {
+                        color: 'primary.primary',
+                        backgroundColor: 'transparent' // opcional, remove fundo cinza
+                      }
+                    }}>
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -157,11 +170,11 @@ export default function Navbar() {
                 key={page}
                 variant='text'
                 underline='hover'
-                color='primary.light'
                 onClick={handleCloseNavMenu}
                 href={`/${page.toLowerCase()}`}
                 sx={{
                   '&': {
+                    color: 'text.primary',
                     alignItems: 'normal',
                     fontWeight: '700'
                   },
